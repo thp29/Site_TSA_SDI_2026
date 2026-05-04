@@ -38,6 +38,7 @@ include 'header.php';
 
                 <div class="champ_formulaire">
                     <label for="email">Votre adresse e-mail <span class="requis" aria-label="requis">*</span> :</label>
+                    <small class="aide-email">(Format attendu : nom@domaine.com)</small>
                     <input type="email" id="email" name="email" autocomplete="email" placeholder="jean.dupont@exemple.com" required aria-required="true">
                 </div>
 
@@ -54,6 +55,7 @@ include 'header.php';
                 <button type="submit" class="bouton_action btn_large">
                     Je transmets mon message à l'association
                 </button>
+                
             </form>
             
             <?php

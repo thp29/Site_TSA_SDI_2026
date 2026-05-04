@@ -33,8 +33,8 @@
                 <li><a class="lien_classique" href="articles.php" <?= ($page_actuelle == 'articles') ? 'aria-current="page"' : '' ?>>Articles</a></li>
                 <li><a class="lien_classique" href="liens.php" <?= ($page_actuelle == 'liens') ? 'aria-current="page"' : '' ?>>Liens</a></li>
                 <li><a class="lien_classique" href="temoignages.php" <?= ($page_actuelle == 'temoignages') ? 'aria-current="page"' : '' ?>>Témoignages</a></li>
-                <li><a class="lien_action" href="outil_energie.php" <?= ($page_actuelle == 'energie') ? 'aria-current="page"' : '' ?>>Gérer mon énergie</a></li>
-                <li><a class="lien_action" href="contact.php" <?= ($page_actuelle == 'contact') ? 'aria-current="page"' : '' ?>>Contact</a></li>
+                <li><a class="lien_action" href="outil_energie.php" <?= ($page_actuelle == 'energie') ? 'aria-current="page"' : '' ?>><strong>Gérer mon énergie</strong></a></li>
+                <li><a class="lien_action" href="contact.php" <?= ($page_actuelle == 'contact') ? 'aria-current="page"' : '' ?>> <strong>Contact</strong></a></li>
             </ul>
         </nav> 
     </div>

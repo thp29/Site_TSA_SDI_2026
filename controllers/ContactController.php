@@ -43,13 +43,19 @@ class ContactController {
                 $envoi_reussi = $modele->envoyerEmail($nom, $email_expediteur, $sujet, $message);
 
                 if ($envoi_reussi) {
-                    $message_succes = "Merci, votre message a bien été envoyé !";
+                    $message_succes = "Merci, votre message a bien été envoyé !, Nous vous répondrons dans les meilleurs délais.";
                 } else {
-                    $message_erreur = "Une erreur serveur est survenue lors de l'envoi.";
+                    $message_erreur = "Une erreur serveur est survenue lors de l'envoi. Veuillez réessayer plus tard.";
                 }
 
             } 
-           
+            
+           /* else if (!filter_var($email_expediteur, FILTER_VALIDATE_EMAIL)) {
+                // Erreur de validation : email invalide
+                $message_erreur = "Veuillez entrer une adresse e-mail valide au format \"mail@domaine.com\"";
+
+            }*/
+            
             else {
                 // Erreur de validation (ex: champ vide ou email invalide)
                 $message_erreur = "Veuillez remplir correctement tous les champs.";

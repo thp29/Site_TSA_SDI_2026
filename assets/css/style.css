@@ -7,9 +7,10 @@
     --h1-color: #1f57a5;   /* Bleu moyen pour titres principaux */
     --h2-color: #11527b;   /* Bleu moyen */
 
-    --action-color : #fd542a;   /* Beige clair pour boutons et éléments interactifs */
-    --boutons_couleur: #fbfaf8; /* Couleur fond boutons  */
-    --boutons_principaux_hover: #11527b; /* Couleur hover des boutons principaux */
+    --action-color : #DF2A09;   /* orange pour boutons et éléments interactifs */
+    --action-color_fond_beige: #CE2609; /* orange plus foncé pour les boutons d'action dans les fonds beiges plus foncés*/
+    --boutons_couleur: #fbfaf8; /* Couleur textes boutons actions/interactifs */
+    --boutons_principaux_hover: #11527b; /* Couleur hover des boutons clasiques/principaux */
     --boutons_action_hover: #f73100; /* Couleur hover des boutons d'action */
 
     --focus_classique: #11527b; /* Couleur focus pour éléments classiques */
@@ -146,7 +147,7 @@ nav ul a[aria-current="page"] {
     background-color: var(--h1-color); /* Utilise ton bleu moyen */
     color: var(--boutons_couleur);     /* Met le texte en clair */
     border-radius: 0.5rem;             /* Garde les bords arrondis de ton design */
-    font-weight: bold;                 /* Optionnel : met le texte un peu plus gras pour bien le marquer */
+    font-weight: bold;                 /* met le texte un peu plus gras pour bien le marquer */
 }
 
 a.lien_classique:focus-visible{  /* Focus visible pour les liens */
@@ -614,12 +615,12 @@ nav ul a {
 .mention_requis {
   text-align: center;
     font-size: 0.9rem;
-    color: var(--action-color); /* On utilise ton orange pour attirer l'œil */
+    color: var(--action-color_fond_beige); /* On utilise ton orange pour attirer l'œil */
     margin-bottom: -0.5rem; /* Rapproche la légende du premier champ */
 }
 
 .requis {
-    color: var(--action-color);
+    color: var(--action-color_fond_beige);
     font-weight: bold;
 }
 
@@ -628,6 +629,15 @@ nav ul a {
     display: block;
     font-weight: bold;
     color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.aide-email {
+    color: var(--action-color_fond_beige);
+    font-weight: bold;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.25rem;
     margin-bottom: 0.5rem;
 }
 
