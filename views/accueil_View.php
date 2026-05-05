@@ -60,7 +60,7 @@ include 'views/templates/header.php';
                         la psychoéducation des personnes concernées et l'inclusion.</p>
                 </article>
 
-                <article class="Partage de ressources">
+                <article class="ressources">
                      <img class = "icones_missions" src ="./assets/imgs/icone_ressources.svg" 
                     alt ="">
                     <h3> Partage de ressources </h3>

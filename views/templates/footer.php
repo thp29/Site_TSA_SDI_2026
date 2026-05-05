@@ -14,14 +14,14 @@
             <section class="contact_footer">
                 <h3><strong>Contact</strong></h3>
                 <p>Val d'oise - 95</p>
-                <p>Email : <u>tsasdi95@proton.me</u></p>
-                <p>Téléphone: <u>06 56 69 70 68</u></p>
+                <p>Email : tsasdi95@proton.me</p>
+                <p>Téléphone: 06 56 69 70 68</p>
             </section>
         </div>
 
         <img class="logo_footer" src="./assets/imgs/logo.png" alt="Logo de l'association TSA SDI 95 info">
 
-        <p>2026 TSA SDI 95. Tous droits réservés. Association loi 1901.</p>
+        <p><small>2026 TSA SDI 95. Tous droits réservés. Association loi 1901. </small></p>
     </footer>
 
     <a href="#top" id="scrollToTop" aria-label="Bouton retour en haut de page">↑</a>

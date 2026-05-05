@@ -1,0 +1,864 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --main-color: #23425f;  /* Bleu foncé pour texte et fond footer */
+
+    --h1-color: #1f57a5;   /* Bleu moyen pour titres principaux */
+    --h2-color: #11527b;   /* Bleu moyen */
+
+    --action-color : #DF2A09;   /* orange pour boutons et éléments interactifs */
+    --action-color_fond_beige: #CE2609; /* orange plus foncé pour les boutons d'action dans les fonds beiges plus foncés*/
+    --boutons_couleur: #fbfaf8; /* Couleur textes boutons actions/interactifs */
+    --boutons_principaux_hover: #11527b; /* Couleur hover des boutons clasiques/principaux */
+    --boutons_action_hover: #f73100; /* Couleur hover des boutons d'action */
+
+    --focus_classique: #11527b; /* Couleur focus pour éléments classiques */
+    --focus_action : #f73100; /* Couleur focus pour éléments d'action */
+    
+    --fond_global: #faf7f3;  /* Fond très clair */
+    --fond_sections: #f1ece6;           /* fond cartes beiges */
+    --fond_variante: #ebeff2;            /* fond variante pour les éléments interactifs */
+    --fond_aside: #eef2f5;              /* fond aside */
+    --style-bordure_sections: 0.3rem solid #f8ece2; /* Le cadre sections */
+    --style-bordure_boutons_classic:  0.1rem solid #11527b; /*#cfe5ff; */ /* Le cadre boutons classiques */
+
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Verdana", sans-serif;
+    line-height: 1.6; /* espace entre lignes pour une meilleure lisibilité */
+    color: var(--main-color);
+    background-color: var(--fond_global);
+    text-align: left; /* Alignement du texte à gauche pour une meilleure lisibilité */
+
+    /* Mobile First : Flex Column */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*gap: 1.8rem; /* Espace entre les sections pour une meilleure lisibilité */
+    min-height: 100vh;
+}
+
+
+
+h1 {
+    color: var(--h1-color);
+    font-size: 2.1rem;
+    width: fit-content; /* La boîte H1 fait maintenant pile la taille du texte */
+    margin-left: auto;  /* Pousse la boîte au centre (depuis la gauche) */
+    margin-right: auto; /* Pousse la boîte au centre (depuis la droite) */
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 3px solid var(--main-color); 
+    padding-bottom: 0.5rem; 
+ 
+  }
+ 
+
+h2 {
+    color: var(--h2-color);
+    font-size: 1.6rem;
+    width: fit-content; /* La boîte H2 fait maintenant pile la taille du texte */
+    margin-left: auto;  /* Pousse la boîte au centre (depuis la gauche) */
+    margin-right: auto; /* Pousse la boîte au centre (depuis la droite) */
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-bottom: 3px solid var(--main-color); 
+    padding-bottom: 0.5rem; 
+}
+
+.missions_asso h2 {
+    padding-bottom: 1rem; /* Ajoute un peu d'espace entre le titre et le contenu */
+    padding-top: 1rem;
+}
+
+h3 {
+    color: var(--h2-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+ p {
+    font-size: 1rem;
+    color: var(--main-color);
+    display: block; /* Affiche les paragraphes en bloc pour éviter les problèmes de mise en page */
+    padding-top: 2rem;
+    text-wrap: balance; /* Permet un meilleur équilibrage du texte sur plusieurs lignes, surtout pour les titres et les paragraphes courts */
+ }
+
+a {
+    color: var(--main-color);
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    display: inline-block; /* Permet d'ajouter du padding autour des liens */
+    padding: 0.5rem 1rem; /* Espace intérieur pour les liens, améliore la cliquabilité */
+}
+
+a:hover {
+    background-color: var(--boutons_principaux_hover);
+    color: var(--boutons_couleur);
+}
+
+a.lien_classique {
+    border-radius: 0.5rem;
+}
+a.lien_action,  button.bouton_action{
+    background-color: var(--action-color);
+    color: var(--boutons_couleur);
+   /* padding: 0.5rem 0.5rem; */
+    border-radius: 1rem;
+}
+
+a.lien_action:hover, button.bouton_action:hover {
+    background-color: var(--boutons_couleur);
+    color: var(--action-color);
+}
+
+
+/* =========================================
+   2. ACCESSIBILITÉ
+   ========================================= */
+
+
+   .skip-link {
+    position: absolute;
+    top: -100px; left: 0;
+    background: var(--action-color); color: var(--boutons_couleur);
+    padding: 10px; z-index: 9999; transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 10px; /* Fait apparaître le lien de saut quand il est focus */
+    outline: 3px solid var(--focus_classique); 
+}
+
+/* --- Mise en évidence de la page actuelle dans le menu --- */
+nav ul a[aria-current="page"] {
+    background-color: var(--h1-color); /* Utilise ton bleu moyen */
+    color: var(--boutons_couleur);     /* Met le texte en clair */
+    border-radius: 0.5rem;             /* Garde les bords arrondis de ton design */
+    font-weight: bold;                 /* met le texte un peu plus gras pour bien le marquer */
+}
+
+a.lien_classique:focus-visible{  /* Focus visible pour les liens */
+    outline: 3px solid var(--focus_classique);
+    outline-offset: 3px;
+}
+
+a.lien_action:focus-visible,  button.bouton_action:focus-visible {  /* Focus visible pour les éléments interactifs d'action */
+    outline: 3px solid var(--focus_action);
+    outline-offset: 3px;
+}
+
+footer a.lien_classique:focus-visible {  /* Focus visible pour les éléments interactifs (liens, boutons) */
+    outline: 4px solid var(--boutons_couleur);
+    outline-offset: 4px;
+}
+
+footer a.lien_action:focus-visible {  /* Focus visible pour les éléments interactifs d'action */
+    outline: 4px solid var(--focus_action);
+    outline-offset: 4px;
+}
+.btn_menu_nav:focus-visible {  /* Focus visible pour les éléments interactifs (liens, boutons) */
+    outline: 3px solid var(--focus_action);
+    outline-offset: 3px;
+}
+
+
+  #scrollToTop {
+    width: 3.2rem; height: 3.2rem;
+    text-align: center; 
+    opacity: 0; /* Rend le bouton transparent  par default*/
+    visibility: hidden; /* Empêche de cliquer dessus par erreur, surtout pour nav au clavier !!; quand il est invisible */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Crée une apparition en douceur */
+    position: fixed;
+    bottom: 20px; right: 20px;
+    background: var(--action-color); color: var(--boutons_couleur);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none; /*pour enlever le soulignement par défault*/
+    z-index: 1000;
+    &:hover {
+        background-color: var(--boutons_action_hover);
+    }
+    &:focus-visible {
+        outline: 3px solid var(--focus_action);
+        outline-offset: 3px;
+    }
+  }
+
+  #scrollToTop:hover { transform: scale(1.1); }
+  #scrollToTop.visible {
+      opacity: 1; /* Le rend 100% visible */
+      visibility: visible; /* Le rend cliquable */
+  }
+
+  header {
+      /* Le header devient une colonne pour empiler la barre d'accessibilité et la zone principale */
+      display: flex;
+      flex-direction: column;
+      background-color: var(--fond_sections);
+      border-bottom: var(--style-bordure_sections);
+      margin-bottom: 0.9rem;
+    }
+
+ 
+ /***   header 
+  {
+    background-color: var(--fond_sections);
+    color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem;
+    border-bottom: var(--style-bordure_sections);
+    margin-bottom: 0.9rem;
+    text-align: center; /* Centrage du texte dans le header 
+
+  } */
+  
+  
+
+  .header_principal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.4rem;
+    width: 100%;
+  }
+
+  /* --- Style de la barre d'accessibilité MOBILE --- */
+  .barre_accessibilite {
+    display: flex;
+    flex-direction: column; /* Mobile First : Empile les éléments de la barre d'accessibilité */
+    justify-content: center; 
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0.5rem 1.4rem;
+    background-color: var(--main-color);
+  }
+
+ .accessibilite_entete {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+  }
+
+  /* La liste d'options : cachée par défaut */
+  #liste_accessibilite {
+    list-style: none;
+    display: none; /* Masque les options par défaut sur mobile */
+    flex-direction: column; 
+    gap: 1rem; 
+    margin-top: 1rem;
+  }
+
+ #liste_accessibilite.menu-accessibilite-ouvert {
+    display: grid; /* On remplace flex par grid (grille) */
+    grid-template-columns: 1fr 1fr; /* On crée 2 colonnes de même taille */
+    gap: 1rem; /* Espace entre les boutons */
+    align-items: stretch; /* Les boutons auront la même hauteur */
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  /* On dit au 3ème élément (le dernier <li>) de prendre les 2 colonnes ! */
+  #liste_accessibilite.menu-accessibilite-ouvert li:last-child {
+    grid-column: span 2; 
+  }
+
+  /* On s'assure que les boutons remplissent bien leurs cases */
+  #liste_accessibilite.menu-accessibilite-ouvert button {
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 0.5rem;
+  }
+
+
+  .icone_accessibilite {
+    width: 2rem; 
+    height: auto; /* Maintient les proportions de l'icône */
+    background-color: var(--fond_global);
+    border-radius: 20%;
+    padding: 0.2rem; /* Ajoute un peu d'espace à l'intérieur de l'icône */
+    
+  }
+
+  .barre_accessibilite button {
+    background: none;
+    border: 1px solid var(--boutons_couleur);
+    color: var(--boutons_couleur);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: fit-content; /* Le bouton s'adapte à la taille du texte */
+     height: auto; /* Permet au bouton de s'adapter à la hauteur du texte */
+  }
+
+  .barre_accessibilite p {
+    text-align: center;
+    color: var(--boutons_couleur);
+    font-size: 0.9rem;
+    /* margin-right: 1rem; */
+  }
+
+  .barre_accessibilite button:hover,
+  .barre_accessibilite button[aria-pressed="true"] {
+    background-color: var(--boutons_couleur);
+    color: var(--main-color);
+  }
+
+
+
+  /* --- CLASSES MODIFIÉES PAR JAVASCRIPT pour fonctions accessibilité header --- */
+
+  /* 1. Augmenter la taille du texte */
+  html.texte-agrandi {
+    font-size: 120%; /* Augmente la taille de base de 20% */
+  }
+
+  /* 2. Augmenter l'interligne */
+  body.interligne-agrandi {
+    line-height: 2; /* Passe de 1.6 à 2 */
+  }
+
+
+  /* 3. Mode Sombre (Haut Contraste) */
+  body.theme-sombre {
+    --fond_global: #121212;
+    --fond_sections: #1e1e1e;
+    --fond_variante: #2a2a2a;
+    --main-color: #f5f5f5; /* Le texte devient très clair */
+    --h1-color: #efefef;   
+    --h2-color: #f0eded;
+    --style-bordure_sections: 0.2rem solid #444;
+    --bouton_couleur: #444; /* Couleur des boutons en mode sombre */
+    .barre_accessibilite {
+      background-color: #2a2a2a; /* Fond de la barre d'accessibilité en mode sombre */
+    }
+    footer {
+      background-color: #1e1e1e; /* Fond du footer en mode sombre */
+    }
+    .logo_header, .icone_accessibilite, .icones_missions {
+     background-color: #f5f5f5; /* Fond du logo en mode sombre */
+    }
+
+     .barre_accessibilite button:hover, .barre_accessibilite button[aria-pressed="true"]
+     {
+        background-color: var(--boutons_principaux_hover); /* Couleur de hover des boutons en mode sombre */
+        color: #f5f5f5; /* Couleur du texte des boutons en mode sombre */
+     }
+     nav ul a[aria-current="page"] 
+    {
+        background-color:  #f5f5f5; /* Utilise ton bleu moyen */
+        color: var(--fond_variante);     /* Met le texte en clair */
+
+    }
+  }
+
+
+
+  /*** --- Style du header et du menu de navigation --- */
+
+  .logo_header {
+  width: 4rem; /* Ajustez la taille du logo selon vos besoins */
+  height: auto; /* Maintient les proportions du logo */
+  background-color: transparent;
+  border-radius: 5%;
+  box-shadow: 0 0 5px var(--h2-color);
+  }
+
+
+  nav ul {
+    list-style: none;
+    display: none; /* Masque le menu par défaut sur mobile */
+    flex-direction: column; /* Mobile First : Menu vertical */
+    gap : 1.5rem; /* Espace entre les liens pour une meilleure lisibilité */
+  }
+
+    nav ul.menu-ouvert {
+    display: flex; /* Affiche le menu quand la classe "menu-ouvert" est ajoutée */
+    text-align: center;
+}
+
+nav ul a {
+    display: block; /* Rend les liens cliquables sur toute la largeur du menu */
+    padding: 1rem;
+}
+
+
+  #btn_menu_nav, #btn_menu_accessiblite
+  {
+    background-color: var(--action-color);
+    color: var(--boutons_couleur);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: var(--boutons_couleur);
+        color: var(--action-color);
+    }
+  }
+
+  .header-menu-ouvert .logo_header {
+    display: none; /* Masque le logo lorsque le menu est ouvert sur mobile */
+  }
+
+  .header-menu-ouvert {
+    justify-content: center; /* Centre les éléments du menu lorsque le menu est ouvert sur mobile */
+  }
+
+
+
+
+
+/*** 3. STRUCTURE & MISE EN PAGE section hero et main container et main articles *****/
+
+
+ .hero_bienvenue {
+    background-color: var(--fond_sections);
+    padding: 1.6rem;/* Espacement intérieur pour éviter que le contenu touche les bords du cadre*/
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius:  1rem;
+    border-color: #f8ece2;
+    border-style: solid;
+    border-width: 0.25rem;
+    box-shadow: 0 0 5px var(--h2-color);
+  }
+
+  .hero_bienvenue p {
+    padding-top: 1.7rem;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .missions_asso {
+    width: 100%;
+    background-color: var(--fond_variante);
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+
+  .pres-missions{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-left: auto; /* Pousse la boîte depuis la gauche */
+    margin-right: auto; /* Pousse la boîte depuis la droite -> Elle se centre ! */
+
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--fond_sections);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius:  1rem;
+    border-color: var(--h2-color);
+    border-style: none;
+    border-width: 0.15rem;
+    box-shadow: 0 0 3px var(--h2-color);
+  }
+
+  article h3 {
+      border-bottom: 2px solid var(--main-color); 
+      padding-bottom: 0.5rem; 
+      display: inline-block;
+      text-align: center;
+  }
+  
+  article p {
+    text-align: left;
+    display: block; /* Affiche les paragraphes en bloc pour éviter les problèmes de mise en page */
+    padding: 0.8rem;
+    max-width: 90%; /* Limite la largeur du texte pour une meilleure lisibilité */
+  }
+
+  #orientation-description {
+    margin-top: 1rem; /* Ajoute un peu d'espace au-dessus du paragraphe de description */
+    margin-bottom: 1rem;
+  border-bottom: 3px solid var(--main-color); 
+   width: fit-content; /* La boîte H1 fait maintenant pile la taille du texte */
+  }
+
+  .icones_missions {
+  
+    height: 3rem;
+      width: auto;
+       margin-top: 0.8rem;
+      margin-bottom: 0.3rem;
+      border-radius: 50%; /* Arrondit les coins de l'image pour un style plus doux */
+       background-color: transparent;
+
+  }
+
+
+
+
+  /*** --- Style du footer --- */
+
+   footer   {
+    background-color: var(--main-color);
+    color: var(--boutons_couleur);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: var(--style-bordure_sections);
+    text-align: center; /*   margin-bottom: 0.9rem;Centrage du texte dans le header */
+
+  }
+
+  .logo_footer {
+    padding: 0.5rem; /* Ajoute un peu d'espace à l'intérieur du logo */
+    margin: 0.5rem 0; /* Ajoute un peu d'espace au-dessus et en dessous du logo */
+    height: 4rem; /* Maintient les proportions du logo */
+    width: auto; /* Ajustez la taille du logo selon vos besoins */
+    background-color: var(--fond_aside);
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+
+   footer ul {
+    list-style: none;
+    display: flex; /* Masque le menu par défaut sur mobile */
+    flex-direction: column; /* Mobile First : Menu vertical */
+    gap : 1.2rem; /* Espace entre les liens pour une meilleure lisibilité */
+  }
+
+  footer a {
+    color: var(--boutons_couleur);
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    display: inline-block; /* Permet d'ajouter du padding autour des liens */
+    padding: 0.5rem 1rem; /* Espace intérieur pour les liens */
+
+  }
+
+  footer p {
+    color: var(--boutons_couleur);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+ footer h3 {
+      color: var(--boutons_couleur);
+      margin: 0.5rem 0;
+      border-bottom: 2px solid var(--action-color); 
+      padding-bottom: 0.7rem; 
+      display: inline-block;
+    }
+
+  .nav_footer {
+    margin-bottom: 1rem;
+  }
+
+
+
+
+  /*** styles spécifiques pour la page de contact mobile */
+  /* --- Détails de la page contact (Mobile et PC) --- */
+
+#texte_info_contact {
+  line-height: 1.8rem; /* Espace entre les lignes pour une meilleure lisibilité */
+   display: block; /* Affiche le texte en bloc pour éviter les problèmes de mise en page */
+    
+}
+
+#presentation_contact {
+    margin-bottom: 1rem; /* Ajoute un peu d'espace en dessous du contenu de bienvenue */
+}
+
+
+
+/* =========================================
+   4. styles FORMULAIRES (Réutilisables)
+   ===========/**** styles for============================== */
+
+/* Le conteneur global du formulaire */
+.form_standard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Aère bien tous les champs automatiquement */
+}
+
+/* Les astérisques et mentions obligatoires */
+.mention_requis {
+  text-align: center;
+    font-size: 0.9rem;
+    color: var(--action-color_fond_beige); /* On utilise ton orange pour attirer l'œil */
+    margin-bottom: -0.5rem; /* Rapproche la légende du premier champ */
+}
+
+.requis {
+    color: var(--action-color_fond_beige);
+    font-weight: bold;
+}
+
+/* Les titres des champs */
+.champ_formulaire label {
+    display: block;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.aide-email {
+    color: var(--action-color_fond_beige);
+    font-weight: bold;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Le design des zones de texte */
+.champ_formulaire input,
+.champ_formulaire textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--h2-color); /* Utilise ton bleu moyen pour le cadre */
+    border-radius: 0.5rem; /* Arrondi léger, cohérent avec tes articles */
+    background-color: var(--fond_global);
+    color: var(--main-color);
+    font-family: inherit; /* Force l'utilisation de Verdana comme le reste du site */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.champ_formulaire textarea {
+    min-width: 80%;
+    resize: vertical; /* Permet à l'utilisateur de redimensionner verticalement la zone de texte si besoin */
+}
+
+/* L'accessibilité : quand l'utilisateur clique ou navigue au clavier sur un champ */
+.champ_formulaire input:focus,
+.champ_formulaire textarea:focus {
+    outline: none; /* On enlève le contour moche par défaut du navigateur */
+    border-color: var(--main-color); /* Le cadre devient bleu foncé */
+    box-shadow: 0 0 0 3px var(--focus_action); /* Ajoute ton halo orange d'accessibilité ! */
+}
+
+/* Adaptation pour transformer n'importe quel lien/bouton en gros bouton de formulaire */
+button.btn_large, 
+a.btn_large {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: none; /* Indispensable pour enlever la bordure grise native des balises <button> */
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+    align-self: center;
+}
+
+/*message de succès ou d'erreur après soumission du formulaire*/
+.message_succes, .message_erreur {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;  
+    margin-top: 1rem;
+}
+
+.message_erreur {
+    background-color: var(--action-color);
+    color: var(--boutons_couleur);
+}
+
+.message_succes {
+    background-color: var(--h1-color);
+    color: var(--boutons_couleur);
+}
+
+
+
+
+  /* --- MEDIA QUERIES pour les écrans de bureau --- */
+
+   @media screen and (min-width: 992px) {
+     /* Styles pour les écrans de bureau (largeur >= 992px) */
+
+      header {
+          justify-content: space-evenly; /* Espace entre le logo et le menu */
+      }
+
+
+
+    /* --- Style de la barre d'accessibilité PC --- */
+
+    .barre_accessibilite {
+      display: flex;
+      flex-direction: row; /* Affiche les éléments de la barre d'accessibilité en ligne sur les écrans de bureau */
+      justify-content: center; 
+    }
+  
+  #btn_menu_accessibilite {
+    display: none; /* Masque le bouton de menu d'accessibilité sur les écrans de bureau */
+  }
+    .icone_accessibilite {
+    width: 2.7rem; 
+    height: auto; /* Maintient les proportions de l'icône */
+    background-color: var(--fond_global);
+    border-radius: 20%;
+    padding: 0.2rem; /* Ajoute un peu d'espace à l'intérieur de l'icône */
+    
+  }
+
+  #liste_accessibilite {
+    display: flex !important; /* Affiche le menu d'accessibilité en ligne sur les écrans de bureau */
+    flex-direction: row; /* Menu horizontal */
+    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+    .barre_accessibilite button
+     {
+    width: auto;
+    height:2.5rem;
+    }
+
+
+
+      .logo_header
+      {
+          width: 150px; /* Augmente la taille du logo sur les écrans de bureau */
+          margin-right: 2rem;
+      }
+      nav ul {
+          display: flex; /* Affiche le menu en ligne sur les écrans de bureau */
+          flex-direction: row; /* Menu horizontal */
+          gap: 2rem; /* Espace entre les liens pour une meilleure lisibilité */
+      }
+
+      #btn_menu_nav
+    {   display: none; /* Masque le bouton de menu sur les écrans de bureau */
+    }
+
+  .hero_bienvenue {
+      align-self: center; /* Centre le contenu de bienvenue horizontalement */
+      justify-content: space-between; /* Centre le contenu de bienvenue verticalement */
+      align-items: center; /* Centre les éléments à l'intérieur du contenu de bienvenue */
+      max-width: 80%; /* Limite la largeur du contenu de bienvenue sur les écrans de bureau */
+      margin-bottom: 1.6rem; /* Ajoute un peu d'espace en dessous du contenu de bienvenue */
+        }
+
+  .presentation_asso {
+    text-align: left;
+    padding-left: 6rem;
+      padding-right: 2rem;
+    
+    text-wrap: balance; /* Permet un meilleur équilibrage du texte sur plusieurs lignes, surtout pour les titres et les paragraphes courts */
+  }
+  main {
+    padding: 0;
+  }
+  
+  .main-container 
+  {
+      flex-direction: row; /* Affiche les sections en ligne sur les écrans de bureau */
+      justify-content: space-around; /* Espace entre les sections pour une meilleure lisibilité */
+      align-items: stretch; /* Aligne les sections en haut */
+      gap: 2rem; /* Espace entre les sections pour une meilleure lisibilité */
+      padding-left: 1rem;
+        padding-right: 1rem;
+  }
+
+  .missions_asso {
+    margin-top: 0;
+  }
+  
+  article {
+      flex: 1; /* Permet aux articles de prendre une largeur égale sur les écrans de bureau */
+      border-style: solid;
+        }
+  
+
+  .Orientation, .Soutien, .Sensibilisation {
+      flex: 1; /* Permet aux sections de prendre une largeur égale sur les écrans de bureau */
+        }
+
+  .btn_acceuil_contact {
+    width: 100%; /* Le bouton prend toute la largeur de son conteneur */
+    display: inline-block; /* Permet d'ajouter du padding autour des boutons */
+    text-align: center; /* Centre le texte à l'intérieur des boutons */
+  }
+    footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; /* Espace entre les éléments du footer */
+    } 
+
+  .footer-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; /* Espace entre les éléments du footer */
+      align-items: flex-start; /* Aligne les éléments verticalement au centre */
+      width: 100%; /* Prend toute la largeur disponible */
+    }
+
+    .nav_footer, .contact_footer {
+      text-align: left; /* Force le texte à gauche */
+      flex: 1; /* Permet aux deux blocs d'avoir la même largeur */
+      padding: 0 2rem; /* Ajoute un peu de marge sur les côtés */
+  }
+    .nav_footer ul {
+      align-items: flex-start; /* Aligne les liens du footer à gauche */
+    }
+
+      .nav_footer a {
+        padding: 0.3rem; /* Réduit le padding pour les liens du footer */
+        margin-bottom: 0;
+        }
+
+    /* Styles spécifiques pour la page de contact PC */
+    .formulaire-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        gap : 1.5rem;
+        flex:0.7; /* Limite la largeur du formulaire sur les écrans de bureau */
+    
+    }
+
+    .champ_formulaire input,
+.champ_formulaire textarea  {
+      width: 40%; /* Les labels prennent 40% de la largeur du formulaire */
+    }
+
+    button.btn_large, 
+a.btn_large {
+    width: 50%;
+}
+
+}
