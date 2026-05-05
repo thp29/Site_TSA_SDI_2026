@@ -713,3 +713,84 @@ button.btn_large, a.btn_large {
     .champ_formulaire input, .champ_formulaire textarea { width: 40%; }
     button.btn_large, a.btn_large { width: 50%; }
 }
+
+
+/**** Page article view (apercu des articles ***/
+
+/** section de bouton de tri de categories de ressources ***/
+.tri_articles
+{
+  display: flex;
+  flex-wrap: wrap;;
+  justify-content: center;
+  gap:1rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  padding: 0 1 rem;
+}
+
+/* --- Carte d'aperçu d'un article --- */
+
+.apercu_article
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3px var(--h2-color);
+}
+
+/* MQ apercu article PC */
+@media screen and (min-width: 992px) {
+  /* MQ apercu article PC */
+@media screen and (min-width: 992px) {
+
+    /* 2. On enlève la limite stricte du mobile pour que les cartes puissent s'étirer */
+    .apercu_article {
+        max-width: none;
+        justify-content: space-around;
+    }
+
+    /* 3. SCÉNARIO A : S'il n'y a qu'UN SEUL article */
+    /* :only-child détecte s'il est tout seul dans le main-container */
+    .apercu_article:only-child {
+        max-width: 60%;
+        flex: 0 0 60%; 
+    }
+
+    /* 4. SCÉNARIO B : S'il y a EXACTEMENT DEUX articles */
+    /* Le premier élément qui est aussi l'avant-dernier (donc il y en a 2), ET son frère */
+    .apercu_article:first-child:nth-last-child(2),
+    .apercu_article:first-child:nth-last-child(2) ~ .apercu_article {
+        max-width: 40%; /* 40% + 40% = 80% de l'espace global, comme tu le souhaitais ! */
+        flex: 0 0 40%;
+    }
+
+    /* 5. SCÉNARIO C : S'il y a 3 articles OU PLUS (Grille classique) */
+    /* S'il y a au moins 3 éléments, on bloque la largeur max pour faire de belles colonnes */
+    .apercu_article:first-child:nth-last-child(n+3),
+    .apercu_article:first-child:nth-last-child(n+3) ~ .apercu_article {
+        max-width: 350px;
+    }
+}
+}
+
+.apercu_article h3 {
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.apercu_article p {
+    flex-grow: 1; /* Le texte prend toute la place disponible au milieu */
+    padding-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.msg_no_article
+{text-align: center;}
+
+

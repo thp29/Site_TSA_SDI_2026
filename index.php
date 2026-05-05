@@ -26,6 +26,19 @@ switch ($page_demandee)
         $controller =new ContactController();
         $controller->gererPageContact();
         break;
+
+    case "articles":
+        require_once "controllers/ArticlesController.php";
+        $controller=new ArticlesController();
+        $controller->AfficherPage_ListeArticles();
+        break;
+    
+    case "article_detail":
+        require_once "controllers/ArticlesController.php";
+        $controller=new ArticlesController();
+        $controller->AfficherPage_Article_entier();
+        break;
+    
     
     default:
         echo "Erreur 404 : Page introuvable";
