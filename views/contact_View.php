@@ -4,7 +4,7 @@ $titre_page = "Contactez-nous - TSA SDI 95 info";
 $page_actuelle = "contact";
 
 // Inclusion de l'en-tête
-include 'header.php';
+include 'views/templates/header.php';
 ?>
 
 <section class="hero_bienvenue" id ="presentation_contact">
@@ -75,5 +75,5 @@ include 'header.php';
 
 <?php 
 // Inclusion du pied de page
-include 'footer.php'; 
+include 'views/templates/footer.php';
 ?>

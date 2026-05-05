@@ -3,12 +3,12 @@
              <section class="nav_footer">
                 <h3><strong>Navigation</strong></h3>
                 <ul>
-                    <li><a class="lien_classique" href="index.php">Accueil</a></li>
-                    <li><a class="lien_classique" href="articles.php">Articles</a></li>
-                    <li><a class="lien_classique" href="liens.php">Liens</a></li>
-                    <li><a class="lien_classique" href="temoignages.php">Témoignages</a></li>
-                    <li><a class="lien_action" href="outil_energie.php">Gérer mon énergie</a></li>
-                    <li><a class="lien_action" href="contact.php">Contact</a></li>
+                    <li><a class="lien_classique" href="index.php?page=accueil">Accueil</a></li>
+                    <li><a class="lien_classique" href="index.php?page=articles">Articles</a></li>
+                    <li><a class="lien_classique" href="index.php?page=liens">Liens</a></li>
+                    <li><a class="lien_classique" href="index.php?page=temoignages">Témoignages</a></li>
+                    <li><a class="lien_action" href="index.php?page=energie">Gérer mon énergie</a></li>
+                    <li><a class="lien_action" href="index.php?page=contact">Contact</a></li>
                 </ul>
             </section>
             <section class="contact_footer">

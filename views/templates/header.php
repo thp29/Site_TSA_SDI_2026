@@ -29,12 +29,12 @@
         <nav role="navigation" aria-label="Menu de navigation principal"> 
             <button type="button" id="btn_menu_nav" class="lien-action" aria-label="Ouvrir le menu de navigation" aria-expanded="false">☰ Menu</button>
             <ul id="liste_nav">
-                <li><a class="lien_classique" href="index.php" <?= ($page_actuelle == 'accueil') ? 'aria-current="page"' : '' ?>>Accueil</a></li>
-                <li><a class="lien_classique" href="articles.php" <?= ($page_actuelle == 'articles') ? 'aria-current="page"' : '' ?>>Articles</a></li>
-                <li><a class="lien_classique" href="liens.php" <?= ($page_actuelle == 'liens') ? 'aria-current="page"' : '' ?>>Liens</a></li>
-                <li><a class="lien_classique" href="temoignages.php" <?= ($page_actuelle == 'temoignages') ? 'aria-current="page"' : '' ?>>Témoignages</a></li>
-                <li><a class="lien_action" href="outil_energie.php" <?= ($page_actuelle == 'energie') ? 'aria-current="page"' : '' ?>><strong>Gérer mon énergie</strong></a></li>
-                <li><a class="lien_action" href="contact.php" <?= ($page_actuelle == 'contact') ? 'aria-current="page"' : '' ?>> <strong>Contact</strong></a></li>
+                <li><a class="lien_classique" href="index.php?page=accueil" <?= ($page_actuelle == 'accueil') ? 'aria-current="page"' : '' ?>>Accueil</a></li>
+                <li><a class="lien_classique" href="index.php?page=articles" <?= ($page_actuelle == 'articles') ? 'aria-current="page"' : '' ?>>Articles</a></li>
+                <li><a class="lien_classique" href="index.php?page=liens" <?= ($page_actuelle == 'liens') ? 'aria-current="page"' : '' ?>>Liens</a></li>
+                <li><a class="lien_classique" href="index.php?page=temoignages" <?= ($page_actuelle == 'temoignages') ? 'aria-current="page"' : '' ?>>Témoignages</a></li>
+                <li><a class="lien_action" href="index.php?page=energie" <?= ($page_actuelle == 'energie') ? 'aria-current="page"' : '' ?>><strong>Gérer mon énergie</strong></a></li>
+                <li><a class="lien_action" href="index.php?page=contact" <?= ($page_actuelle == 'contact') ? 'aria-current="page"' : '' ?>> <strong>Contact</strong></a></li>
             </ul>
         </nav> 
     </div>
