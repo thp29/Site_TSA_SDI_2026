@@ -47,8 +47,10 @@ choisir les types de ressources que vous voulez consulter
                     <!-- substr(texte, depart, longueur) coupe le texte ! -->
                     <p> <strong>Extrait : </strong>
                         <!-- "nl2br" = Insert line breaks where newlines (\n) occur in the string: !-->
-                        <?= nl2br(htmlspecialchars(substr($article["contenu"], 0, 150))) ?>...
+                        <?=nl2br(substr($article["contenu"], 0, 150)) ?>
                     </p>
+                    <br>
+
                     <!--injecter l'ID de l'article à la fin de l'URL -->
                     <a href="index.php?page=article_detail&id=<?=$article["id_article"]?>" class="lien_action">
                         Lire en entier

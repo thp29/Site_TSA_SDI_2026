@@ -57,6 +57,7 @@ class ArticlesModel
         }
     }
 
+
     public function getAllArticles ()
     {
         $requete_ALL= "SELECT * FROM Articles ORDER BY date_ajout DESC";
@@ -66,6 +67,7 @@ class ArticlesModel
         $tab_All_Articles=$requete_ALL_Prep->fetchAll(PDO::FETCH_ASSOC); // fetch assoc= donnees classé par nom colonnes
         return $tab_All_Articles;
     }
+    
 
     public function getArticlesParCategorie ($categorie)
     {
@@ -81,7 +83,10 @@ class ArticlesModel
 
     public function getArticleParID ($id)
     {
-        $requete_id= "SELECT * FROM Articles WHERE id_article = :id"; 
+        // requet sql inner joint pour recuperer pseudo auteur de larticle
+        $requete_id= "SELECT Articles.*, Utilisateur.pseudo FROM Articles  
+                    INNER JOIN Utilisateur ON Articles.id_auteur = Utilisateur.id_utilisateur 
+                    WHERE Articles.id_article = :id"; 
 
         $requete_id_Prep = $this->connexion_bdd->prepare($requete_id);
         $requete_id_Prep->execute([":id"=>$id]);

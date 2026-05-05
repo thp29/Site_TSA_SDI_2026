@@ -790,6 +790,13 @@ button.btn_large, a.btn_large {
     font-size: 0.95rem;
 }
 
+.apercu_article img , .article-detail img
+{
+  height: 4rem;
+  width:auto;
+  gap:1rem;
+  
+}
 .msg_no_article
 {text-align: center;}
 

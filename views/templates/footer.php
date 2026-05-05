@@ -21,7 +21,7 @@
 
         <img class="logo_footer" src="./assets/imgs/logo.png" alt="Logo de l'association TSA SDI 95 info">
 
-        <p><small>2026 TSA SDI 95. Tous droits réservés. Association loi 1901. </small></p>
+        <p><small>2026 TSA SDI 95 INFO. Tous droits réservés. Association loi 1901. </small></p>
     </footer>
 
     <a href="#top" id="scrollToTop" aria-label="Bouton retour en haut de page">↑</a>

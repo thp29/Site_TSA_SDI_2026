@@ -25,7 +25,7 @@ include 'views/templates/header.php';
         </p>
 
         <p class="auteur_article">
-            Ecrit par : <?= htmlspecialchars(($article['id_auteur'])) ?>
+            Ecrit par : <?= htmlspecialchars(($article['pseudo'])) ?>
         </p>
 
         <!-- La Date d'ajout (Je te l'offre, avec un formatage à la française !) -->
@@ -40,11 +40,8 @@ include 'views/templates/header.php';
 
         <!-- LE CONTENU COMPLET -->
         <div class="contenu_article_entier">
-
-            <!-- À TOI DE JOUER : Affiche le contenu complet. -->
-            <!-- N'oublie pas le combo magique nl2br + htmlspecialchars ! -->
             <p>
-                <?= nl2br(htmlspecialchars($article["contenu"])) ?>
+                <?= nl2br(($article["contenu"])) ?>
             </p>
         </div>
 
