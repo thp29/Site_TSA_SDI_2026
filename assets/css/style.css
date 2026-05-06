@@ -721,7 +721,7 @@ button.btn_large, a.btn_large {
 .tri_articles
 {
   display: flex;
-  flex-wrap: wrap;;
+  flex-wrap: wrap;
   justify-content: center;
   gap:1rem;
   margin-bottom: 2rem;
@@ -790,14 +790,44 @@ button.btn_large, a.btn_large {
     font-size: 0.95rem;
 }
 
-.apercu_article img , .article-detail img
+.apercu_article img
 {
-  height: 4rem;
+  height: 5rem;
   width:auto;
   gap:1rem;
   
 }
+
 .msg_no_article
 {text-align: center;}
 
 
+/*** page vue article entier ****/
+
+.article-detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  max-width: 100%;
+  overflow-wrap: break-word; /* Force les liens ou mots trop longs à passer à la ligne ! */
+  word-break: break-word;
+}
+
+
+.article-detail p 
+{
+  text-align: left;
+  text-wrap:wrap ;
+ 
+}
+
+ .article-detail img
+{
+  display: block;
+  width: 15%;
+  min-width: 5rem;
+  height: auto;
+  margin: 1.4rem auto; /* 2rem d'espace en haut/bas, et "auto" à gauche/droite */
+  
+}

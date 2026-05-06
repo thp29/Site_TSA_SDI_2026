@@ -43,11 +43,17 @@ choisir les types de ressources que vous voulez consulter
                 <article class ="apercu_article">
                 
                     <h2><?= htmlspecialchars($article["titre"]) ?></h2>
+
+                     <!--  L'IMAGE (Facultative) -->
+                    <?php if (!empty($article['image_url'])) { ?>
+                        <img src="<?=htmlspecialchars($article["image_url"])?>" alt="Illustration de l'article" class ="img_article">
+                    <?php } ?>
+
                     
-                    <!-- substr(texte, depart, longueur) coupe le texte ! -->
+                    <!-- substr(texte, depart, longueur) coupe le texte-->
+                    <!--strip_tags supprime les balises html (comme <img>) du contenu texte -->
                     <p> <strong>Extrait : </strong>
-                        <!-- "nl2br" = Insert line breaks where newlines (\n) occur in the string: !-->
-                        <?=nl2br(substr($article["contenu"], 0, 150)) ?>
+                        <?= htmlspecialchars(substr(strip_tags($article['contenu']), 0, 250)) ?>
                     </p>
                     <br>
 
