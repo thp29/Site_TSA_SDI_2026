@@ -8,7 +8,8 @@ L'association a pour but d'orienter et d'accompagner les familles d'enfants/adul
 du Spectre de l'Autisme Sans Déficience Intellectuelle (TSA SDI) ou des adultes se questionnant, 
 afin de lutter contre l'errance diagnostique.
 
-Le site vise à améliorer la visibilité de l'association; faciliter l'orientation (formulaire de contacts et liens vers des structures spécifique); partager des ressources (articles de sensibilisation), témoignages de bénéficiaires et outils (un outil interactif et personnel, de "gestion de son énergie" est prévu, pour mieux appréhender sa fatigabilité). 
+Objectifs :
+Le site vise à améliorer la visibilité de l'association; faciliter l'orientation (formulaire de contact et liens vers des structures spécifiques); partager des ressources (articles de sensibilisation), des témoignages de bénéficiaires et proposera un outil interactif et personnel, de "gestion de son énergie" pour mieux appréhender sa fatigabilité au quotidien. 
 
 
 ## Technologies & Architecture :
@@ -16,7 +17,7 @@ Ce projet est développé en HTML, CSS JS, PHP natifs, sans framework externe et
 * **Langages :** PHP 8, SQL, HTML5, CSS3, JavaScript (Vanilla).
 * **Architecture :** Modèle-Vue-Contrôleur (MVC) personnalisé avec un routeur central (`index.php`).
 * **Base de données :** MySQL
-* Interface administrateur simple et claire, prévur
+* Interface administrateur simple et claire, prévue. 
 
 ## Accessibilité (normes WCAG/RGAA):
 Une attention particulière est portée à l'accessibilité numérique, un enjeu important pour le public visé par l'association et également pour l'ensemble des personnes à besoin particuliers.
@@ -33,6 +34,7 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Police "accessible" : Verdana
 * Menu de personnalisation de l'affichage : Pour augmenter l'interligne, la taille du texte et passer en mode sombre, en gardant un  affichage cohérent
 * Peu d'animations visuelles (facilité l'accessibilité aux lecteurs d'écran et limite la charge congnitive/sensorielle) 
+
 
 ## Fonctionnalités actuelles (v1 /mai 2026)
 * Routeur centralisé gérant les URL (`?page=...`).
