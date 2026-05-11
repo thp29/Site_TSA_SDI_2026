@@ -26,7 +26,7 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Clarté, prévisibilité, cohérence sur le parcours utilisateur et minimalisme de l'interface, des boutons et de la navigation (pour limiter la charge cognitive et sensorielle) 
 * Contenus textuels clairs et explicites
 * Navigation au clavier (focus, tab etc)
-* Intégration d'attributs `aria` ry balise "alt" (pour les images) pour la lisibilité par les lecteurs d'écran.
+* Intégration d'attributs `aria` et balises "alt" (pour les images) pour la lisibilité par les lecteurs d'écran.
 * Formulaires sécurisés et lisibles (prevention de la charge cognitive).
 * Lien d'evitement, bouton retour haut de page
 * Contrastes élevès
@@ -41,5 +41,4 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Séparation stricte de la logique (Contrôleurs), de l'accès/gestion des données (modèle) et de l'affichage (Vues).
 * Page d'acceuil, menu d'accessibilité et menu de navigation; Page de contact, responsives
 * Formulaire de contact sécurisé (protection XSS, validation des emails).
-* Page de ressources/articles :boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour lecture
-* 
+* Page de ressources/articles : boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour consultation 
