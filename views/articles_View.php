@@ -46,7 +46,7 @@ choisir les types de ressources que vous voulez consulter
 
                      <!--  L'IMAGE (Facultative) -->
                     <?php if (!empty($article['image_url'])) { ?>
-                        <img src="<?=htmlspecialchars($article["image_url"])?>" alt="Illustration de l'article" class ="img_article">
+                       <img src="<?= $article['image_url'] ?>" alt="Illustration de l'article" class="img_article">
                     <?php } ?>
 
                     

@@ -19,7 +19,11 @@ include 'views/templates/header.php';
         <!-- 3. LE TITRE DE L'ARTICLE -->
         <h1><?=htmlspecialchars($article["titre"])?></h1>
         
-        
+        <!--  L'IMAGE (Facultative) -->
+         <?php if (!empty($article['image_url'])) { ?>
+            <img src="<?=htmlspecialchars($article["image_url"])?>" alt="Illustration de l'article" class ="img_article">
+        <?php } ?>
+
         <p class="cat_article">
             Ressource de catégorie : <?= htmlspecialchars(($article['categorie'])) ?>
         </p>
@@ -33,11 +37,7 @@ include 'views/templates/header.php';
             Publié le : <?= date('d/m/Y', strtotime($article['date_ajout'])) ?>
         </p>
 
-        <!--  L'IMAGE (Facultative) -->
-         <?php if (!empty($article['image_url'])) { ?>
-            <img src="<?=htmlspecialchars($article["image_url"])?>" alt="Illustration de l'article" class ="img_article">
-        <?php } ?>
-
+        
         <!-- LE CONTENU COMPLET -->
         <div class="contenu_article_entier">
             <p>
