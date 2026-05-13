@@ -49,7 +49,7 @@ include 'views/templates/header.php';
                     <p><strong>Permanence disponible 
                     par téléphone ou mail.</strong>
                     </p>
-                     <a href="index.php?page=contact" class="lien_action" id="btn_acceuil_contact">Nous contacter</a>
+                     <a href="index.php?page=contact" class="lien_action" id="btn_acceuil_contact">&#9993 Nous contacter</a>
                 </article>
 
                 <article class="Sensibilisation">

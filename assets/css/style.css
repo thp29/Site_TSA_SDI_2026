@@ -99,7 +99,13 @@ p {
     text-wrap: balance;
 }
 
+.icone-svg{
+    gap : 4rem;
+}
 
+.icone-nav{
+    margin-right: 8px;
+}
 
 /* =========================================
    3. ÉLÉMENTS GLOBAUX & ACCESSIBILITÉ
@@ -743,8 +749,6 @@ button.btn_large, a.btn_large {
   box-shadow: 0 0 3px var(--h2-color);
 }
 
-/* MQ apercu article PC */
-@media screen and (min-width: 992px) {
   /* MQ apercu article PC */
 @media screen and (min-width: 992px) {
 
@@ -775,7 +779,6 @@ button.btn_large, a.btn_large {
     .apercu_article:first-child:nth-last-child(n+3) ~ .apercu_article {
         max-width: 450px;
     }
-}
 }
 
 .apercu_article h3 {
@@ -832,4 +835,49 @@ button.btn_large, a.btn_large {
   height: auto;
   margin: 1.4rem auto; /* 2rem d'espace en haut/bas, et "auto" à gauche/droite */
   
+}
+
+
+/**** PAGe de liens *****/
+
+/* Grille de liens (Mobile first : Flexbox par défaut) */
+.grille_liens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center; 
+}
+
+/* Cartes individuelles */
+.carte_lien {
+    background: var(--fond_sections);
+    border: 1px solid var(--main-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Prend toute la largeur en mobile */
+    max-width: 500px;
+}
+
+.carte_lien p 
+{
+    text-align: center;
+}
+
+/* Passage en Grid pour Desktop (Ecran > 768px) */
+@media (min-width: 768px) {
+    .grille_liens {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto; /* Centre la grille entière */
+        align-items: stretch; /* Les cartes d'une même ligne ont la même hauteur */
+    }
+    
+    .carte_lien {
+        max-width: 550px; /* On laisse la grille gérer la largeur */
+    }
+
+    
 }

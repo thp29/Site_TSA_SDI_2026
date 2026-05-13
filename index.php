@@ -38,6 +38,12 @@ switch ($page_demandee)
         $controller=new ArticlesController();
         $controller->AfficherPage_Article_entier();
         break;
+
+    case 'liens':
+        require_once 'controllers/LiensController.php';
+        $controller = new LiensController();
+        $controller->afficherPageLiens();
+        break;
     
     
     default:

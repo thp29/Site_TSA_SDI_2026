@@ -3,15 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     /*** Pour cacher le bouton "Retour en haut"  sinon a pas encore scrollé !*/
-    // 1. On va chercher notre bouton dans le HTML grâce à son ID
     const boutonRetourHaut = document.getElementById("scrollToTop");
 
     // 2. On écoute l'événement "scroll" (quand l'utilisateur fait défiler la page)
     window.addEventListener("scroll", () => {
         
-        // 3. Si l'utilisateur est descendu de plus de 300 pixels
+        // 3. Si l'utilisateur est descendu de plus de 200 pixels
         if (window.scrollY > 200) {
-            // On ajoute la classe CSS ".visible" (qui met opacity: 1 et visibility: visible)
+            // On ajoute la classe CSS ".visible"
             boutonRetourHaut.classList.add("visible");
         } else {
             // Sinon (il est tout en haut), on retire la classe
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.toggle("header-menu-ouvert"); // Ajoute ou retire la classe "menu-ouvert" au header pour changer son style
             
         btnMenuNav.setAttribute("aria-expanded", menu_is_open); // Met à jour l'attribut aria-expanded pour l'accessibilité
-        // 5. On change le texte du bouton selon l'état !
+        // 5. On change le texte du bouton selon l'état
         if (menu_is_open) {
             btnMenuNav.textContent = "✖ Fermer";
         } else {
@@ -50,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     btnMenuAccessibilite.addEventListener("click", () => {
         const isOpen = listeAccessibilite.classList.toggle("menu-accessibilite-ouvert"); //
         btnMenuAccessibilite.setAttribute("aria-expanded", isOpen);
+        if(isOpen)
+        {
+        btnMenuAccessibilite.textContent = "✖ Fermer le menu d'accessbilité";
+        }
+        else
+        {
+             btnMenuAccessibilite.textContent = "Menu d'accessbilité";
+        }
     });
 
 
@@ -57,18 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("texte-agrandi") === "actif") {
         document.documentElement.classList.add("texte-agrandi");
         btnTailleTexte.setAttribute("aria-pressed", "true");
+        btnTailleTexte.textContent=("Taille du texte par défault");
     }
 
     // 2. On vérifie l'interligne
     if (localStorage.getItem("interligne-agrandi") === "actif") {
         document.body.classList.add("interligne-agrandi");
         btnInterligne.setAttribute("aria-pressed", "true");
+        btnInterligne.textContent=("Interligne par défault");
     }
 
     // 3. On vérifie le mode sombre
     if (localStorage.getItem("theme-sombre") === "actif") {
         document.body.classList.add("theme-sombre");
         btnContraste.setAttribute("aria-pressed", "true");
+        btnContraste.textContent=("Mode couleurs par défault");
     }
 
 
@@ -80,8 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // On sauvegarde le choix
         if (isActive) {
             localStorage.setItem("texte-agrandi", "actif");
+            btnTailleTexte.textContent=("Taille du texte par défault");
         } else {
             localStorage.removeItem("texte-agrandi"); // On efface la note si désactivé
+            btnTailleTexte.textContent=("A+  Augmenter la Taille du texte");
         }
     });
 
@@ -92,8 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isActive) {
             localStorage.setItem("interligne-agrandi", "actif");
+            btnInterligne.textContent=("Interligne par défault");
         } else {
             localStorage.removeItem("interligne-agrandi");
+            btnInterligne.textContent=("↕ Augmenter l'interligne");
         }
     });
 
@@ -104,8 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isActive) {
             localStorage.setItem("theme-sombre", "actif");
+            btnContraste.textContent=("Mode couleurs par défault");
         } else {
             localStorage.removeItem("theme-sombre");
+            btnContraste.textContent=("◐ Passer en mode sombre");
         }
     });
 });
