@@ -33,12 +33,14 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Interligne par défaut de 1.6rem
 * Police "accessible" : Verdana
 * Menu de personnalisation de l'affichage : Pour augmenter l'interligne, la taille du texte et passer en mode sombre, en gardant un  affichage cohérent
-* Peu d'animations visuelles (facilité l'accessibilité aux lecteurs d'écran et limite la charge congnitive/sensorielle) 
+* Peu d'animations visuelles (facilité l'accessibilité aux lecteurs d'écran et limite la charge congnitive/sensorielle)
+* Icones surliens/boutons comme alternatives "cognitive" aux textes des liens/boutons
 
 
 ## Fonctionnalités actuelles (v1 /mai 2026)
 * Routeur centralisé gérant les URL (`?page=...`).
 * Séparation stricte de la logique (Contrôleurs), de l'accès/gestion des données (modèle) et de l'affichage (Vues).
-* Page d'acceuil, menu d'accessibilité et menu de navigation; Page de contact, responsives
+* Page d'acceuil, menu d'accessibilité et menu de navigation; Page de contact, Page de ressources, Page de liens, responsives
 * Formulaire de contact sécurisé (protection XSS, validation des emails).
-* Page de ressources/articles : boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour consultation 
+* Page de ressources/articles : boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour consultation
+* Page de liens vers sites webs de structures "ressources" sur le TSA
