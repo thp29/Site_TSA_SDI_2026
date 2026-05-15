@@ -14,7 +14,7 @@ include 'views/templates/header.php';
     <line x1="16" y1="17" x2="8" y2="17"></line>
     <polyline points="10 9 9 9 8 9"></polyline>
     </svg>
-    Espace Ressources : Articles 
+    Articles 
     </h1>
     <div class="presentation_asso">
     <p>  <strong>Bienvenue sur notre espace Ressources.</strong><br></p> 
@@ -31,15 +31,19 @@ choisir les types de ressources que vous voulez consulter
     
     <!-- 2. LES BOUTONS DE TRI -->
     <section class= "tri_articles">
-        <a href="index.php?page=articles" class="lien_action"><strong>Tout Afficher</strong></a>
-        <a href="index.php?page=articles&categorie=livre" class="lien_action">Recommendations de livres</a>
-        <a href="index.php?page=articles&categorie=objets" class="lien_action">Recommendations d'objets</a>
-        <a href="index.php?page=articles&categorie=article" class="lien_action">Articles à propos du TSA SDI</a>
+        <a href="index.php?page=articles" class="lien_action"<?= ($categorie_actuelle === "tout") ? 'aria-current="page"' : "" ?>>
+            <strong>Tout Afficher</strong></a>
+        <a href="index.php?page=articles&categorie=livre" class="lien_action"<?= ($categorie_actuelle === "livre")? 'aria-current="page"' : "" ?>>
+            Recommendations de livres</a>
+        <a href="index.php?page=articles&categorie=objets" class="lien_action"<?= ($categorie_actuelle === "objets")? 'aria-current="page"' : "" ?>>
+            Recommendations d'objets</a>
+        <a href="index.php?page=articles&categorie=article" class="lien_action"<?= ($categorie_actuelle === "article")? 'aria-current="page"' : "" ?>>
+            Articles à propos du TSA SDI</a>
 
     </section>
 
     <section class="missions_asso">
-        <div class="main-container" > 
+        <div class="main-container" id="container-article" > 
             <?php 
             // Sécurité : On vérifie s'il y a des articles avant de faire la boucle
             if (!empty($liste_articles)) {

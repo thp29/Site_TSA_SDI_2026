@@ -9,9 +9,12 @@ class ArticlesController
     {
         $model = new ArticlesModel();
 
+        $categorie_actuelle = "tout"; // pour aria current quel "tri actuel" affiché ?
+
         if (isset($_GET["categorie"]) && !empty ($_GET["categorie"]))
         {
             $categorie_clean=htmlspecialchars($_GET["categorie"]);
+            $categorie_actuelle=$categorie_clean;
             $liste_articles=$model->getArticlesParCategorie ($categorie_clean);
         }
         else

@@ -42,12 +42,12 @@ class ContactController {
             // si au moins 1 champ vide
             if (empty($nom_saisi)|| empty($email_saisi)||empty($sujet_saisi)||empty($message_saisi))
             {
-                 $message_erreur = "Veuillez remplir correctement tous les champs.";
+                 $message_erreur = "Erreur : Champs vides, veuillez remplir correctement tous les champs.";
             }
 
             elseif (!filter_var($email_saisi, FILTER_VALIDATE_EMAIL)) 
             {
-                $message_erreur = "L'adresse e-mail saisie n'est pas valide (Rappel du format attendu : nom@domaine.com).";
+                $message_erreur = "Erreur de saisie : L'adresse e-mail saisie n'est pas valide (Rappel du format attendu : nom@domaine.com).";
             }
 
             // si les champs obligatoires ne sont pas vides et email valide

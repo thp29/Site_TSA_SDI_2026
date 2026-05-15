@@ -26,7 +26,7 @@
     --focus_action : #f73100;
     
     --fond_global: #faf7f3;
-    --fond_sections: #f1ece6;
+    --fond_sections: #f4f1ee;
     --fond_variante: #ebeff2;
     --fond_aside: #eef2f5;
     
@@ -627,12 +627,21 @@ article p {
     }
 }
 
+
+
 /* --- Page Contact & Formulaires --- */
+
+ .formulaire-container {
+    background-color: var(--fond_sections);
+    border-radius: 1rem;
+   
+ }
 #texte_info_contact { line-height: 1.8rem; display: block; }
 #presentation_contact { margin-bottom: 1rem; }
 
 .form_standard {
     width: 100%;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -710,7 +719,8 @@ button.btn_large, a.btn_large {
 
 /* MQ Formulaires PC */
 @media screen and (min-width: 992px) {
-    .formulaire-contact {
+
+    .formulaire-container{
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -736,6 +746,26 @@ button.btn_large, a.btn_large {
   padding: 0 1 rem;
 }
 
+.tri_articles a[aria-current="page"]
+{
+    background-color: var(--boutons_couleur);
+    color: var(--action-color);
+    outline: 3px solid var(--action-color_fond_beige); /* Ajoute un contour pour bien marquer la sélection */
+    outline-offset: 2px;
+    font-weight: bold;
+}
+
+/*** container article / pour passer à la ligne sur trop darticles sur la meme ligne sur PC ****/
+
+#container-article {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* "Si le container possède au moins 3 apercus darticles... on aligne a partir du 4eme au debut de la 2eme ligne" */
+  #container-article:has(.apercu_article:nth-child(3)) {
+      justify-content: flex-start;
+  }
 /* --- Carte d'aperçu d'un article --- */
 
 .apercu_article
@@ -755,7 +785,8 @@ button.btn_large, a.btn_large {
     /* 2. On enlève la limite stricte du mobile pour que les cartes puissent s'étirer */
     .apercu_article {
         max-width: none;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
     }
 
     /* 3. SCÉNARIO A : S'il n'y a qu'UN SEUL article */
@@ -778,10 +809,21 @@ button.btn_large, a.btn_large {
     .apercu_article:first-child:nth-last-child(n+3),
     .apercu_article:first-child:nth-last-child(n+3) ~ .apercu_article {
         max-width: 450px;
+        flex: 1 1 30%; /* <-- Prends 30% de l'espace (donc 3 max par ligne) */
+        min-width: 300px; /*  Si l'écran rétrécit trop, passe à la ligne plutôt que de t'écraser */
     }
+
+    .apercu_article h2 {
+    min-height: 9rem;
+    width: 100%;
+    }
+    
 }
 
-.apercu_article h3 {
+.apercu_article h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-bottom: 2px solid var(--main-color);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -847,10 +889,14 @@ button.btn_large, a.btn_large {
     gap: 20px;
     padding: 20px;
     align-items: center; 
+    background-color: var(--fond_variante);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* Cartes individuelles */
 .carte_lien {
+    
     background: var(--fond_sections);
     border: 1px solid var(--main-color);
     padding: 20px;
@@ -864,18 +910,27 @@ button.btn_large, a.btn_large {
     text-align: center;
 }
 
+
+#h2_lien {
+    display: block;
+    align-self: center;
+    margin : 2rem auto;
+}
+
 /* Passage en Grid pour Desktop (Ecran > 768px) */
 @media (min-width: 768px) {
     .grille_liens {
         display: grid;
+        justify-content: center;
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
         gap: 30px;
-        max-width: 1100px;
+        max-width: 1400px;
         margin: 0 auto; /* Centre la grille entière */
         align-items: stretch; /* Les cartes d'une même ligne ont la même hauteur */
     }
     
     .carte_lien {
+        display: inline-flex;
         max-width: 550px; /* On laisse la grille gérer la largeur */
     }
 

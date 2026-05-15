@@ -22,10 +22,14 @@ include 'views/templates/header.php';
 </section>
 
 <main id="contenu_principal" role="main" tabindex="-1">
-    
-    <div class="main-container">
+    <section class = "missions_asso">
+    <section class = "missions_asso">
+
+
+    <div class="main-container" >
         
-        <article class="formulaire-contact">
+
+        <article class="formulaire-container">
             <h2>Envoyer un message</h2>
             
             
@@ -73,6 +77,8 @@ include 'views/templates/header.php';
         </article>
 
     </div>
+
+    </section>
 
 </main>
 

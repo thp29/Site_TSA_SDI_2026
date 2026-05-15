@@ -7,7 +7,7 @@ include 'views/templates/header.php';
 ?>
 
 <section class="hero_bienvenue">
-    <h1>Liens utiles vers des ressources externes</h1>
+    <h1>Liens utiles </h1>
     <div class="presentation_asso" id="pres_liens">
     <p>Besoin d’aide dans votre parcours de diagnostic et votre quotidien ? Consultez cet 
         annuaire pour accéder directement à une sélection de structures officielles, reconnues 
@@ -19,7 +19,7 @@ include 'views/templates/header.php';
 </section>
 
 <main id="contenu_principal" role="main" tabindex="-1">
-    <h2>&#128279 Liens ci dessous : </h2>
+    <h2 id="h2_lien">&#128279 Liens vers des ressources externes ci-dessous : </h2>
     <section class="grille_liens">
         <?php foreach ($liste_liens as $lien) : ?>
             <article class="carte_lien">
