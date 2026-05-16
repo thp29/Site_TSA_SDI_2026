@@ -17,7 +17,7 @@ Ce projet est développé en HTML, CSS JS, PHP natifs, sans framework externe et
 * **Langages :** PHP 8, SQL, HTML5, CSS3, JavaScript (Vanilla).
 * **Architecture :** Modèle-Vue-Contrôleur (MVC) personnalisé avec un routeur central (`index.php`).
 * **Base de données :** MySQL
-* Interface administrateur simple et claire, prévue. 
+* Interface administrateur simple et claire, en cours de dev. 
 
 ## Accessibilité (normes WCAG/RGAA):
 Une attention particulière est portée à l'accessibilité numérique, un enjeu important pour le public visé par l'association et également pour l'ensemble des personnes à besoin particuliers.
@@ -44,3 +44,6 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Formulaire de contact sécurisé (protection XSS, validation des emails).
 * Page de ressources/articles : boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour consultation
 * Page de liens vers sites webs de structures "ressources" sur le TSA
+* Page de témoignages de béneficiaire de l'association
+* Page de connexion vers l'interface Admin
+* Page admin (gestion des articles)
