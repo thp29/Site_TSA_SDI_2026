@@ -581,6 +581,11 @@ article {
     box-shadow: 0 0 3px var(--h2-color);
 }
 
+
+    article:hover {
+        background-color: var(--fond_variante);
+    }
+
 article h3 {
     border-bottom: 2px solid var(--main-color);
     padding-bottom: 0.5rem;
@@ -934,7 +939,7 @@ button.btn_large, a.btn_large {
         max-width: 550px; /* On laisse la grille gérer la largeur */
     }
 
-
+}
 /***** Page de temoignages *****/
 
 
@@ -1001,5 +1006,154 @@ button.btn_large, a.btn_large {
     }
         
 }
+
+
+
+
+
+/* =========================================
+   7. INTERFACE ADMINISTRATION (Mobile First)
+   ========================================= */
+
+/* --- MOBILE (Empilement vertical classique) --- */
+
+.table-admin, 
+    .table-admin tbody, 
+    .table-admin tr, 
+    .table-admin td {
+        display: block;
+        width: 100%;
+    }
+    
+.tableau_admin {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box; /* Empêche tout débordement */
+}
+
+/* Le tableau devient une simple colonne Flexbox */
+.table-admin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* On cache l'en-tête de tableau */
+.table-admin thead {
+    display: none;
+}
+
+.table-admin tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Chaque article est une simple boîte (carte) */
+.table-admin tr {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fond_sections);
+    border: 2px solid var(--main-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* À l'intérieur de la carte, chaque ligne (Titre, Date...) s'empile */
+.table-admin td {
+    display: flex;
+    flex-direction: column; /* Le label au-dessus, le texte en dessous */
+    padding: 0.5rem 0;
+    text-align: left;
+    border-bottom: 1px solid var(--h2-color); /* Petite ligne de séparation douce */
+    word-wrap: break-word; /* Si un mot est trop long, il passe à la ligne */
+    overflow-wrap: break-word;
+}
+
+/* La dernière zone (les boutons) n'a pas de ligne en bas */
+.table-admin td:last-child {
+    border-bottom: none;
+    flex-direction: row; /* On remet les boutons côte à côte */
+    flex-wrap: wrap; /* S'il n'y a pas la place, ils vont à la ligne */
+    gap: 0.5rem;
+    padding-top: 1rem;
+    justify-content: center;
+}
+
+/* Les petits labels (Titre, Catégorie) qu'on affiche juste au-dessus de la valeur */
+.table-admin td::before {
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 0.2rem;
+    font-size: 0.85em;
+    text-transform: uppercase;
+}
+
+/* On injecte le texte des labels */
+.table-admin td:nth-child(1)::before { content: "Titre :"; }
+.table-admin td:nth-child(2)::before { content: "Catégorie :"; }
+.table-admin td:nth-child(3)::before { content: "Date :"; }
+
+
+/* --- PC / TABLETTE (Écrans > 992px) --- */
+@media (min-width: 992px) {
+    
+    /* On restaure le tableau classique en lignes et colonnes */
+    .table-admin {
+        display: table; 
+        border-collapse: collapse;
+        background-color: var(--fond_global);
+        box-shadow: 0 0 5px var(--h2-color);
+        padding: 0;
+    }
+
+    .table-admin thead { display: table-header-group; }
+    .table-admin tbody { display: table-row-group; }
+    
+    .table-admin tr { 
+        display: table-row; 
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .table-admin tbody tr:nth-child(even) {
+        background-color: var(--fond_variante);
+    }
+    .table-admin tbody tr:hover {
+        background-color: var(--fond_sections);
+    }
+
+    .table-admin th,
+    .table-admin td {
+        display: table-cell; 
+        padding: 1rem;
+        border-bottom: 1px solid var(--h2-color);
+    }
+
+    .table-admin th {
+        background-color: var(--main-color);
+        color: var(--boutons_couleur);
+        font-weight: bold;
+    }
+
+    .table-admin td:last-child {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+
+    /* On efface les faux labels sur PC puisqu'on a l'en-tête du tableau */
+    .table-admin td::before {
+        display: none;
+    }
+}
+
+
 
 }

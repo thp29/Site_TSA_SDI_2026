@@ -4,6 +4,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 $page_demandee = "";
 
 if (isset($_GET["page"])) {
@@ -48,6 +50,16 @@ switch ($page_demandee) {
         $controller = new TemoignagesController();
         $controller->afficherPageTemoignages();
         break;
+
+    case "admin":
+        require_once 'controllers/AdminConnexionController.php';
+        $controller = new AdminConnexionController();
+        $controller->gererPageAdminConnexion();
+        break;
+    case "interface_admin":
+        require_once "controllers/InterfaceAdminController.php";
+        $controller = new InterfaceAdminController();
+        $controller->gererPageInterfaceAdmin();
 
     default:
         echo "Erreur 404 : Page introuvable";
