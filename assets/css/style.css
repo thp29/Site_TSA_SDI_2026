@@ -392,7 +392,7 @@ nav ul a[aria-current="page"] {
     background-color: var(--h1-color);
     color: var(--boutons_couleur);
     border-radius: 0.5rem;
-    font-weight: bold;
+    /*font-weight: bold; */
 }
 
 #btn_menu_nav, #btn_menu_accessibilite {
@@ -755,7 +755,7 @@ button.btn_large, a.btn_large {
     font-weight: bold;
 }
 
-/*** container article / pour passer à la ligne sur trop darticles sur la meme ligne sur PC ****/
+/*** container article / pour passer à la ligne si trois darticles sur la meme ligne sur PC ****/
 
 #container-article {
     flex-wrap: wrap;
@@ -934,5 +934,72 @@ button.btn_large, a.btn_large {
         max-width: 550px; /* On laisse la grille gérer la largeur */
     }
 
+
+/***** Page de temoignages *****/
+
+
+/* Grille  (Mobile first : Flexbox par défaut) */
+.grille_temoignages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center; 
+    background-color: var(--fond_variante);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Cartes individuelles */
+.carte_temoignage {
     
+    background: var(--fond_sections);
+    border: 1px solid var(--main-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Prend toute la largeur en mobile */
+    max-width: 500px;
+}
+
+.carte_temoignage p 
+{
+    text-align: left;
+}
+
+.carte_temoignage h3 {
+    font-size: smaller;
+}
+
+.date_temoignage{
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Passage en Grid pour Desktop (Ecran > 768px) */
+@media (min-width: 768px) {
+    .grille_temoignages{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto; /* Centre la grille entière */
+        align-items: stretch; /* Les cartes d'une même ligne ont la même hauteur */
+    }
+    
+    .carte_temoignage:only-child {
+        flex:1;
+    }
+    .carte_temoignage{
+        display: inline-flex;
+        max-width: 550px; /* On laisse la grille gérer la largeur */
+    }
+
+    #hero_temoignages
+    {
+        max-width: 800px;
+    }
+        
+}
+
 }
