@@ -32,6 +32,8 @@ include 'views/templates/header.php';
 
 
                 <!-- attribut "novalidate" du formulaire, pour bloquer les affichage derreur de saisie automatique du navigateur -->
+
+                <!-- action="#" (ou laisser l'attribut vide) signifie : "Renvoie les données exactement à la même adresse URL où on se trouve actuellement".-->
                 <form action="#" method="POST" class="form_standard" novalidate>
 
                     <p class="mention_requis"><span class="requis" aria-hidden="true">*</span> Champs obligatoires</p>

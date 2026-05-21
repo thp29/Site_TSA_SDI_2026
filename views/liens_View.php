@@ -9,9 +9,9 @@ include 'views/templates/header.php';
 <section class="hero_bienvenue">
     <h1>Liens utiles </h1>
     <div class="presentation_asso" id="pres_liens">
-        <p>Besoin d’aide dans votre parcours de diagnostic et votre quotidien ? Consultez cet
+        <p>Besoin d’aide dans votre parcours de diagnostic et votre quotidien ?<br> Consultez cet
             annuaire pour accéder directement à une sélection de structures officielles, reconnues
-            et de professionnels qualifiés, recommandés par l'association. Nous sommes là pour vous
+            et de professionnels qualifiés, recommandés par l'association.<br> Nous sommes là pour vous
             guider vers les démarches appropriées (par exemple pour les démarches auprès de la MDPH
             pour la RQTH et la PCH).
         </p>

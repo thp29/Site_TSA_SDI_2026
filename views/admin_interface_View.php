@@ -28,8 +28,17 @@ include 'views/templates/header.php';
                     <br>
                     <br>
 
-                    <a href="index.php?action=ajouter_article" class="lien_action">Créer un nouvel article</a>
+                    <a href="index.php?page=ajouter_article" class="lien_action">Créer un nouvel article</a>
                     <br>
+
+                    <?php
+                    if (isset($_GET['statut']) && $_GET['statut'] === 'supprime') {
+                        echo '<p class="message_succes" role="alert">L\'article a bien été supprimé.</p><br>';
+                    }
+                    if (isset($_GET['statut']) && $_GET['statut'] === 'erreur') {
+                        echo '<p class="message_erreur" role="alert">Une erreur est survenue.</p><br>';
+                    }
+                    ?>
 
                     <table class="table-admin">
                         <thead>
@@ -48,9 +57,9 @@ include 'views/templates/header.php';
                                     <td><?= date('d/m/Y', strtotime($article['date_ajout'])) ?></td>
 
                                     <td>
-                                        <a href="index.php?action=modifier_article&id=<?= $article["id_article"] ?>" class=" lien_action">Modifier</a>
+                                        <a href="index.php?page=modifier_article&id=<?= $article["id_article"] ?>" class=" lien_action">Modifier</a>
 
-                                        <a href="index.php?action=supprimer_article&id=<?= $article["id_article"] ?>" class="lien_action" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer</a>
+                                        <a href="index.php?page=supprimer_article&id=<?= $article["id_article"] ?>" class="lien_action" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

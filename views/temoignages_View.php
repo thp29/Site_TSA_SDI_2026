@@ -10,7 +10,7 @@ include 'views/templates/header.php';
     <h1>Témoignages </h1>
     <div class="presentation_asso" id="pres_liens">
         <p>Découvrez ci-dessous les expériences et les parcours de personnes ayant
-            bénficié des services de l'association.
+            bénéficiés des services de l'association.
         </p>
     </div>
 </section>

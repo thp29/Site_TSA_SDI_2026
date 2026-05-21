@@ -72,4 +72,37 @@ class ArticlesModel
         $article_par_id = $requete_id_Prep->fetch(PDO::FETCH_ASSOC); // fetch assoc= donnees classé par nom colonnes
         return $article_par_id;
     }
+
+    public function creer_article($titre_saisi, $categorie_saisi, $image_url_saisi, $contenu_saisi)
+    {
+        $requete_insert_article = "INSERT INTO Articles (titre,categorie,contenu,image_url,id_auteur)
+        VALUES(:titre, :cat, :contenu, :image_url, :id)";
+        $requet_insert_prep = $this->connexion_bdd->prepare($requete_insert_article);
+        $ajout_reussi = $requet_insert_prep->execute([":titre" => $titre_saisi, ":cat" => $categorie_saisi, ":contenu" => $contenu_saisi, ":image_url" => $image_url_saisi, ":id" => 5]);
+        return $ajout_reussi;
+    }
+
+    public function modifier_article($id_article_amodifier, $titre_saisi, $categorie_saisi, $image_url_saisi, $contenu_saisi)
+    {
+
+        $requete_modif_article = "UPDATE Articles SET titre=:titre,categorie=:cat,contenu=:contenu,image_url=:image_url
+        WHERE Articles.id_article = :id";
+        $requet_insert_prep = $this->connexion_bdd->prepare($requete_modif_article);
+        $ajout_reussi = $requet_insert_prep->execute([
+            ":id" => $id_article_amodifier,
+            ":titre" => $titre_saisi,
+            ":cat" => $categorie_saisi,
+            ":contenu" => $contenu_saisi,
+            ":image_url" => $image_url_saisi
+        ]);
+        return $ajout_reussi;
+    }
+
+    public function delete_article($id_article_todelete)
+    {
+        $requete_delete_article = "DELETE FROM Articles WHERE Articles.id_article=:id";
+        $requete_delete_prep = $this->connexion_bdd->prepare($requete_delete_article);
+        $delete_ok = $requete_delete_prep->execute([":id" => $id_article_todelete]);
+        return $delete_ok;
+    }
 }

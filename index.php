@@ -60,6 +60,27 @@ switch ($page_demandee) {
         require_once "controllers/InterfaceAdminController.php";
         $controller = new InterfaceAdminController();
         $controller->gererPageInterfaceAdmin();
+        break;
+
+    case 'ajouter_article':
+        require_once "controllers/ArticlesController.php";
+        $controller = new ArticlesController();
+        $controller->gererFormAjouterArticle();
+        break;
+
+    case "modifier_article":
+        require_once "controllers/ArticlesController.php";
+        $controller = new ArticlesController();
+        $controller->gererFormModifierArticle();
+        break;
+
+    case "supprimer_article":
+        require_once "controllers/ArticlesController.php";
+        $controller = new ArticlesController();
+        $controller->gererDeleteArticle();
+        break;
+
+
 
     default:
         echo "Erreur 404 : Page introuvable";

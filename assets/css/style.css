@@ -96,12 +96,13 @@ p {
     color: var(--main-color);
     display: block;
     padding-top: 2rem;
-    text-wrap: balance;
+    /*text-wrap: balance; */
 }
 
 .icone-svg{
     gap : 4rem;
 }
+
 
 .icone-nav{
     margin-right: 8px;
@@ -153,7 +154,7 @@ button.bouton_action:hover {
 
 .skip-link:focus {
     top: 10px;
-    outline: 4px solid var(--focus_classique);
+    outline: 7px solid var(--focus_action);
 }
 
 a.lien_classique:focus-visible,
@@ -168,6 +169,15 @@ button.bouton_action:focus-visible {
     outline-offset: 3px;
 }
 
+.btn-access:focus-visible{
+     outline: 4px solid var(--boutons_couleur);
+    outline-offset: 3px;
+}
+
+#btn_menu_accessibilite, #btn_menu_nav {
+    outline: 4px solid var(--focus_classique);
+    outline-offset: 3px;
+}
 #scrollToTop {
     width: 3.2rem; 
     height: 3.2rem;
@@ -383,10 +393,12 @@ nav ul.menu-ouvert {
     text-align: center;
 }
 
+
 nav ul a {
     display: block;
     padding: 1rem;
 }
+
 
 nav ul a[aria-current="page"] {
     background-color: var(--h1-color);
@@ -680,7 +692,7 @@ article p {
     margin-bottom: 0.5rem;
 }
 
-.champ_formulaire input, .champ_formulaire textarea {
+.champ_formulaire input, .champ_formulaire textarea, .champ_formulaire select {
     width: 100%;
     padding: 0.8rem;
     border: 2px solid var(--h2-color);
@@ -884,6 +896,9 @@ button.btn_large, a.btn_large {
   
 }
 
+.lien_retour_all_articles {
+    margin-top: 2rem;
+}
 
 /**** PAGe de liens *****/
 
