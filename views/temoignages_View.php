@@ -20,9 +20,10 @@ include 'views/templates/header.php';
         <?php foreach ($liste_temoignages as $temoignage) : ?>
             <article class="carte_temoignage">
                 <h2><?= htmlspecialchars($temoignage['pseudo']) ?></h2>
-                <p><?= htmlspecialchars($temoignage['contenu']) ?></p>
+                <p><?= htmlspecialchars($temoignage['contenu']) ?></p><br>
 
                 <div class="pied_card_temoignages">
+                    <br>
                     <h3 class="date_temoignage">
                         Receuilli le : <?= date('d/m/Y', strtotime($temoignage['date_publication'])) ?>
                     </h3>

@@ -80,6 +80,30 @@ switch ($page_demandee) {
         $controller->gererDeleteArticle();
         break;
 
+    case "energie":
+        require_once 'controllers/EnergieConnexionController.php';
+        $controller = new EnergieConnexionController();
+        $controller->gererConnexionEnergie();
+        break;
+
+    case "energie_dashboard":
+        require_once 'controllers/EnergieDashboardController.php';
+        $controller = new EnergieDashboardController();
+        $controller->gererDashboard();
+        break;
+
+    case "api_energie_sauvegarde":
+        require_once 'controllers/EnergieDashboardController.php';
+        $controller = new EnergieDashboardController();
+        $controller->sauvegarderJournalAPI();
+        break;
+
+    case "journal_detail":
+        require_once 'controllers/EnergieDashboardController.php';
+        $controller = new EnergieDashboardController();
+        $controller->afficherJournalDetail();
+        break;
+
 
 
     default:

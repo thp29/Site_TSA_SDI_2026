@@ -11,13 +11,17 @@ include 'views/templates/header.php';
     <h1>L'association TSA SDI 95 INFO </h1>
 
     <div class="presentation_asso">
-        <p class="hero_p1"><strong>L'association a pour objectif de partager des informations simples et éclairées
-                sur le Trouble de Spectre de l'Autisme (TSA) sans déficience intellectuelle (SDI) ni retard
-                de langage aux adultes concerné.e.s ou qui se pensent concerné.e.s, sur le département du Val
-                d'Oise afin de leur éviter une errance diagnostique.</strong></p>
+        <p class="hero_p1"> <strong>L'association </strong> a pour<strong> objectif de partager des informations </strong> simples et éclairées
+            sur le <strong> de Spectre de l'Autisme (TSA), sans déficience intellectuelle (SDI), ni retard
+                de langage, </strong> aux adultes concerné.e.s ou qui se pensent concerné.e.s, sur le département du <strong>Val
+                d'Oise </strong> afin de leur éviter une <strong> diagnostique.</strong></p>
 
-        <p class=hero_p>Ici, nous sommes alignés sur les recommandations de la HAS, sur les informations du CRAIF
-            et de La Maison de l'Autisme à Aubervilliers (93).
+        <p class=hero_p>Ici, nous sommes alignés sur :
+        <ul>
+            <li>les <strong>recommandations de la HAS </li></strong>
+            <li>les informations du <strong>CRAIF</li>
+            <li>La Maison de l'Autisme à Aubervilliers </strong>(93, Seine-Saint-Denis).</li>
+        </ul>
         </p>
     </div>
 </section>
@@ -34,8 +38,8 @@ include 'views/templates/header.php';
 
         <h2>Nos Missions Principales</h2>
 
-        <p class="pres-missions"> L'association TSA SDI 95 INFO s'engage au quotidien à travers trois grands axes d'action
-            pour soutenir les familles et les personnes concernées. </p>
+        <p class="pres-missions"> L'association <strong>TSA SDI 95 INFO</strong> s'engage au quotidien à travers <strong>trois grands axes d'action
+                pour soutenir les familles et les personnes concernées. </strong></p>
 
         <div class="main-container">
 
@@ -43,12 +47,12 @@ include 'views/templates/header.php';
                 <img class="icones_missions" src="./assets/imgs/boussolle.png"
                     alt="">
                 <h3>Orientation</h3>
-                <p id="orientation-description">Guider les familles et les personnes concernées vers les professionnels compétents,
-                    les structures adaptées et les démarches administratives appropriées.
+                <p id="orientation-description"><strong>Guider</strong> les familles et les personnes concernées vers les <strong>professionnels</strong> compétents,
+                    les <strong>structures</strong> adaptées et les <strong>démarches</strong> administratives appropriées.
                 </p>
                 <p><strong>Permanence disponible
                         par téléphone ou mail.</strong>
-                </p>
+                </p><br><br>
                 <a href="index.php?page=contact" class="lien_action" id="btn_acceuil_contact">&#9993 Nous contacter</a>
             </article>
 
@@ -56,15 +60,15 @@ include 'views/templates/header.php';
                 <img class="icones_missions" src="./assets/imgs/icone_sensi.svg"
                     alt="">
                 <h3>Sensibilisation</h3>
-                <p> Informer sur les réalités du TSA sans déficience intellectuelle, afin de favoriser
-                    la psychoéducation des personnes concernées et l'inclusion.</p>
+                <p> Informer sur les réalités du <strong>TSA sans déficience intellectuelle</strong>, afin de favoriser
+                    la <strong>psychoéducation</strong> des personnes concernées et <strong>l'inclusion.</strong></p>
             </article>
 
             <article class="ressources">
                 <img class="icones_missions" src="./assets/imgs/icone_ressources.svg"
                     alt="">
                 <h3> Partage de ressources </h3>
-                <p> Centraliser des informations fiables et des outils pratiques pour accompagner les personnes
+                <p> <strong>Centraliser</strong> des <strong>informations</strong> fiables et des <strong>outils</strong> pratiques pour <strong>accompagner</strong> les personnes
                     concernées et faciliter l'orientation dans leurs parcours. </p>
             </article>
 

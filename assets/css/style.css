@@ -45,7 +45,7 @@ html {
 }
 
 body {
-    font-size: 120%;
+    font-size: 1.2em;
     font-family: "Verdana", sans-serif;
     line-height: 1.6;
     color: var(--main-color);
@@ -92,7 +92,7 @@ h3 {
 }
 
 p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--main-color);
     display: block;
     padding-top: 2rem;
@@ -179,8 +179,8 @@ button.bouton_action:focus-visible {
     outline-offset: 3px;
 }
 #scrollToTop {
-    width: 3.2rem; 
-    height: 3.2rem;
+    width: 3.5rem; 
+    height: 3.5rem;
     text-align: center;
     opacity: 0;
     visibility: hidden;
@@ -534,7 +534,8 @@ footer a.lien_action:focus-visible { outline: 4px solid var(--focus_action); out
     box-shadow: 0 0 5px var(--h2-color);
 }
 
-.hero_bienvenue p { padding-top: 1.7rem; }
+.hero_bienvenue p { padding-top: 1.7rem;
+}
 
 @media screen and (min-width: 992px) {
     .hero_bienvenue {
@@ -542,7 +543,13 @@ footer a.lien_action:focus-visible { outline: 4px solid var(--focus_action); out
         justify-content: space-between;
         align-items: center;
         max-width: 80%;
-        margin-bottom: 1.6rem;
+        align-content: center;
+        margin-top: 2rem;;
+        margin-bottom: 2rem;
+    }
+
+    .hero_bienvenue p {
+        max-width: 750px; 
     }
     .presentation_asso {
         text-align: left;
@@ -633,6 +640,10 @@ article p {
         gap: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    .pres-missions {
+         max-width: 60%;
     }
     .missions_asso { margin-top: 0; }
     article { flex: 1; border-style: solid; }
@@ -906,7 +917,7 @@ button.btn_large, a.btn_large {
 .grille_liens {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
     padding: 20px;
     align-items: center; 
     background-color: var(--fond_variante);
@@ -928,6 +939,7 @@ button.btn_large, a.btn_large {
 .carte_lien p 
 {
     text-align: center;
+    margin-bottom: 1.6rem;
 }
 
 
@@ -1025,6 +1037,241 @@ button.btn_large, a.btn_large {
 
 
 
+/**********************************/
+/**** dahsboard outil Energie *****/
+/**********************************/
+
+#hero-energie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1.5rem;
+
+}
+
+
+/* --- Mobile First : Empilement en colonne --- */
+#grille_energie {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* L'aside a des marges par défaut sur mobile à cause de .presentation_asso, on les réinitialise pour qu'il s'aligne bien avec les articles */
+#grille_energie > aside {
+    margin: 0 0.5rem; 
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--fond_sections);
+    box-shadow: 0 0 3px var(--h2-color);
+}
+
+/* --- PC / TABLETTE (Écrans > 992px) --- */
+@media screen and (min-width: 992px) {
+    
+    /* Activation de la Grille */
+    #grille_energie {
+        display: grid;
+        /* Colonne 1 = 7 parts (70%), Colonne 2 = 3 parts (30%) */
+        grid-template-columns: 6fr 4fr; 
+        grid-template-rows: auto auto; /* 2 lignes qui s'adaptent à la hauteur de leur contenu */
+        gap: 2rem;
+        align-items: start; /* Empêche les blocs de s'étirer verticalement de manière anormale */
+        padding: 0 2rem; /* 0 en haut/bas, 3rem à gauche et à droite */
+        padding-bottom: 2rem;
+    }
+
+     /* 1. Bloc : Formulaire de suivi (Ligne 1, Colonne 1) */
+    #grille_energie > article:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        margin: 0; /* Annule les marges par défaut des articles pour respecter la grille */
+    }
+
+    /* 2. Bloc : À propos de la fatigabilité (Ligne 2, Colonne 1 - En bas à gauche) */
+    #grille_energie > aside {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin: 0;
+        width: 100%;
+        align-content: center;
+    }
+
+    /* 3. Bloc : Historique des journaux (Ligne 2, Colonne 1) */
+    #grille_energie > article:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 1; 
+        margin: 0;
+        height: 100%;
+    }
+
+}   
+
+
+/* --- Affichage du score géant --- */
+.affichage_energie {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.texte_label_energie {
+    font-size: 1.4rem;
+}
+
+#energie_actuelle {
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--action-color);
+    display: block;
+    margin-top: 1rem;
+}
+
+/* --- Tableau dynamique des activités --- */
+.conteneur_table_activites {
+    width: 100%;
+}
+
+.table_activites_dynamique {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#aucun_engagement td {
+    text-align: center;
+    font-style: italic;
+}
+
+/* --- Espacement du Formulaire --- */
+#form_suivi_energie {
+    margin-top: 2rem;
+}
+
+#btn_ajouter_activite {
+    margin-bottom: 2rem;
+}
+
+/* --- Bouton spécial : Validation du journal (Vert) --- */
+.btn_valider_journal {
+    background-color: #27ae60;
+    font-weight: bold;
+    color: white; /* Sécurité pour la lisibilité */
+}
+
+.btn_valider_journal:hover,
+.btn_valider_journal:focus {
+    background-color: #219653; /* Vert légèrement plus sombre au survol pour l'accessibilité */
+}
+
+/* --- Historique des journaux --- */
+.conteneur_historique_journaux {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.journal_apercu {
+    width: 100%;
+    text-align: center;
+}
+
+.journal_apercu .infos_energie {
+    margin: 0.5rem 0;
+}
+
+.journal_apercu .infos_activites {
+    margin-bottom: 1.5rem;
+}
+
+
+/**** Style vue détail d'un journal de suivi****/
+
+/* --- Vue détail d'un journal d'énergie --- */
+.article_journal_detail {
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--fond_sections);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.entete_journal_detail {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.titre_journal_detail {
+    border: none;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.resume_energie_journal {
+    display: flex;
+    gap: 3rem; /* Espacement entre les deux infos d'énergie */
+    margin: 2rem 0;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.sous_titre_journal {
+    margin-top: 2rem;
+}
+
+.table_activites_journal {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.cellule_impact_energie {
+    color: var(--action-color);
+    font-weight: bold;
+}
+
+
+/* =========================================
+   STYLE TABLEAU DÉTAIL DU JOURNAL (PC)
+   ========================================= */
+
+@media screen and (min-width: 992px) {
+    
+    /* 1. On force le tableau à respecter nos largeurs */
+    .table_activites_journal {
+        table-layout: fixed; 
+        width: 100%;
+    }
+
+    /* 2. On définit la largeur de la colonne "Nom de l'activité" */
+    .table_activites_journal th:nth-child(1),
+    .table_activites_journal td:nth-child(1) {
+        width: 30%; 
+    }
+
+    /* 3. On définit la largeur de la colonne "Impact" et on centre le texte */
+    .table_activites_journal th:nth-child(2),
+    .table_activites_journal td:nth-child(2) {
+        width: 20%; 
+        text-align: center;
+    }
+
+    /* 4. On donne le maximum de place (50%) à la colonne "Commentaires" */
+    .table_activites_journal th:nth-child(3),
+    .table_activites_journal td:nth-child(3) {
+        width: 50%; 
+    }
+
+    /* 5. On interdit la coupure lettre par lettre (annule les effets des autres conteneurs) */
+    .table_activites_journal td {
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+}
 
 /* =========================================
    7. INTERFACE ADMINISTRATION (Mobile First)
@@ -1171,4 +1418,3 @@ button.btn_large, a.btn_large {
 
 
 
-}

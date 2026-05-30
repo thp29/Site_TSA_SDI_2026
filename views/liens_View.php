@@ -24,7 +24,7 @@ include 'views/templates/header.php';
         <?php foreach ($liste_liens as $lien) : ?>
             <article class="carte_lien">
                 <h2><?= htmlspecialchars($lien['titre_lien']) ?></h2>
-                <p><?= htmlspecialchars($lien['description_courte']) ?></p>
+                <p><?= htmlspecialchars($lien['description_courte']) ?></p><br>
 
                 <a href="<?= htmlspecialchars($lien['url']) ?>" target="_blank" class="lien_action">
                     Visiter le site &#8599
