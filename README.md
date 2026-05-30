@@ -39,7 +39,7 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 
 ## Fonctionnalités actuelles (v1 /mai 2026)
 * Routeur centralisé gérant les URL (`?page=...`).
-* Séparation stricte de la logique (Contrôleurs), de l'accès/gestion des données (modèle) et de l'affichage (Vues).
+* Séparation de la logique (Contrôleurs), de l'accès/gestion des données (modèle) et de l'affichage (Vues).
 * Page d'acceuil, menu d'accessibilité et menu de navigation; Page de contact, Page de ressources, Page de liens, responsives
 * Formulaire de contact sécurisé (protection XSS, validation des emails).
 * Page de ressources/articles : boutons/liens de tri par catégorie, affichage aperçu et pages d'accès aux articles "entiers" pour consultation
@@ -47,3 +47,7 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Page de témoignages de béneficiaire de l'association
 * Page de connexion vers l'interface Admin
 * Page admin (gestion CRUD des articles)
+* Outil de suivi de l'énergie / de la fatiguabilité :
+  - outil personnalisé, accès après inscription par formulaire de connexion sécurisé
+  - Dahsboard de l'outil de suivi : informations guidées pour l'utilisateur, formulaire pour renseigner des activités et leur coût en énergie lors de la      session d'utilisation de l'outil, affichage de son niveau d'énergie en direct, enregistrement et affichage des acitivtés renseignées lors de la          session, affichage de l'apercu des journaux de suivis (un journal contient les données/acitivités renseignées lors d'une session de suivi journalière complétée)
+  - Vue des journaux de suivi, avec leurs listes d'activités associées (accessbile par un lien, au niveau de l'apercu des journaux, dans le dashboard global de l'outil de suivi)
