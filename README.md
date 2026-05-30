@@ -47,7 +47,8 @@ Une attention particulière est portée à l'accessibilité numérique, un enjeu
 * Page de témoignages de béneficiaire de l'association
 * Page de connexion vers l'interface Admin
 * Page admin (gestion CRUD des articles)
-* Outil de suivi de l'énergie / de la fatiguabilité :
+  
+*** Outil de suivi de l'énergie / de la fatiguabilité :**
   - outil personnalisé, accès après inscription par formulaire de connexion sécurisé
   - Dahsboard de l'outil de suivi : informations guidées pour l'utilisateur, formulaire pour renseigner des activités et leur coût en énergie lors de la      session d'utilisation de l'outil, affichage de son niveau d'énergie en direct, enregistrement et affichage des acitivtés renseignées lors de la          session, affichage de l'apercu des journaux de suivis (un journal contient les données/acitivités renseignées lors d'une session de suivi journalière complétée)
   - Vue des journaux de suivi, avec leurs listes d'activités associées (accessbile par un lien, au niveau de l'apercu des journaux, dans le dashboard global de l'outil de suivi)
