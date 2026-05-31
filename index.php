@@ -92,6 +92,16 @@ switch ($page_demandee) {
         $controller->gererDashboard();
         break;
 
+    case "deconnexion_energie": //clique sur bouton se deconnecter du dashboard outil
+        // On supprime spécifiquement les variables de session de l'utilisateur
+        unset($_SESSION["id_utilisateur"]);
+        unset($_SESSION["pseudo"]);
+
+        // Redirection vers la page acceuil
+        header("Location: index.php?page=accueil");
+        exit();
+        break;
+
     case "api_energie_sauvegarde":
         require_once 'controllers/EnergieDashboardController.php';
         $controller = new EnergieDashboardController();

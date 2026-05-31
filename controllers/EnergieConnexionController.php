@@ -6,6 +6,13 @@ class EnergieConnexionController
 {
     public function gererConnexionEnergie()
     {
+
+        /*** si on est deja connecté et qu on veut acceder à l'outil via menu nav, redirigé vers dashboard directement sans passer par page de connexion! */
+        if (isset($_SESSION["id_utilisateur"])) {
+            header("Location: index.php?page=energie_dashboard");
+            exit(); // On coupe le code ici pour ne pas charger le formulaire HTML
+        }
+
         // Variables pour gérer les messages et pré-remplir les champs
         $erreur_connexion = "";
         $erreur_inscription = "";

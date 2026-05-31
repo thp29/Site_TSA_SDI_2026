@@ -14,7 +14,7 @@
     <a href="#contenu_principal" class="skip-link">Aller au contenu principal</a>
 
     <header id="top">
-        <div class="barre_accessibilite" aria-label="Menu d'accessibilité">
+        <div class="barre_accessibilite" aria-label="Menu d'accessibilité" role="toolbar">
             <div class="accessibilite_entete">
                 <img class="icone_accessibilite" src="./assets/imgs/Accessibility.svg" alt="Icône d'accessibilité">
                 <button type="button" id="btn_menu_accessibilite" class="lien-action" aria-label="Ouvrir le menu d'accessibilité" aria-expanded="false">☰ Menu d'accessibilité</button>

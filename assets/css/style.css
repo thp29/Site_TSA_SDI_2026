@@ -760,9 +760,11 @@ button.btn_large, a.btn_large {
 }
 
 
+
 /**** Page article view (apercu des articles ***/
 
 /** section de bouton de tri de categories de ressources ***/
+
 .tri_articles
 {
   display: flex;
@@ -771,7 +773,7 @@ button.btn_large, a.btn_large {
   gap:1rem;
   margin-bottom: 2rem;
   margin-top: 1.5rem;
-  padding: 0 1 rem;
+  padding: 0 0.4rem;
 }
 
 .tri_articles a[aria-current="page"]

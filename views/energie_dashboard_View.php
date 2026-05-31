@@ -16,7 +16,7 @@ include 'views/templates/header.php';
         </p>
     </div>
     <div class="deconnexion-energie">
-        <a href="index.php?page=accueil" class="lien_action bouton_quitter">Je me déconnecte de mon outil de suivi</a>
+        <a href="index.php?page=deconnexion_energie" class="lien_action bouton_quitter">Je me déconnecte de mon outil de suivi</a>
     </div>
 </section>
 

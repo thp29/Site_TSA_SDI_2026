@@ -16,13 +16,12 @@ include 'views/templates/header.php';
                 de langage, </strong> aux adultes concerné.e.s ou qui se pensent concerné.e.s, sur le département du <strong>Val
                 d'Oise </strong> afin de leur éviter une <strong> diagnostique.</strong></p>
 
-        <p class=hero_p>Ici, nous sommes alignés sur :
+        <p class=hero_p>Ici, nous sommes alignés sur :</p>
         <ul>
-            <li>les <strong>recommandations de la HAS </li></strong>
-            <li>les informations du <strong>CRAIF</li>
-            <li>La Maison de l'Autisme à Aubervilliers </strong>(93, Seine-Saint-Denis).</li>
+            <li>les <strong>recommandations de la HAS </strong></li>
+            <li>les informations du <strong>CRAIF</strong></li>
+            <li>La Maison de l'Autisme à Aubervilliers <strong>(93, Seine-Saint-Denis).</strong></li>
         </ul>
-        </p>
     </div>
 </section>
 
@@ -53,7 +52,7 @@ include 'views/templates/header.php';
                 <p><strong>Permanence disponible
                         par téléphone ou mail.</strong>
                 </p><br><br>
-                <a href="index.php?page=contact" class="lien_action" id="btn_acceuil_contact">&#9993 Nous contacter</a>
+                <a href="index.php?page=contact" class="lien_action" id="btn_acceuil_contact">&#9993; Nous contacter</a>
             </article>
 
             <article class="Sensibilisation">
