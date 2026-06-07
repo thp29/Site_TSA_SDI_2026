@@ -1,6 +1,8 @@
 # TSA SDI 95 INFO - Site Web Associatif
 (Work In Progress) 
 
+**Lien temporaire** (hébégement serveur Université) : https://handiman.univ-paris8.fr/~theo/TSA_SDI/index.php)
+
 
 ## Présentation du projet :
 Ce projet est la réalisation de "A à Z" en quasi autonomie (en partie assisté par IA), du site web de l'association **TSA SDI 95 INFO**. 
@@ -23,9 +25,12 @@ Ce projet est développé en HTML, CSS JS, PHP natifs, sans framework externe et
 Une attention particulière est portée à l'accessibilité numérique, un enjeu important pour le public visé par l'association et également pour l'ensemble des personnes à besoin particuliers.
 
 **Réalisation d'un audit rapide RGAA rapide** (sur 25 critères importants) et ciblé sur trois pages clés : l'Accueil, la page de Contact et la page des Articles. Les critères évalués sur cet échantillon sont validés (18 critères applicables conformes).
-ien de rapport d'audit : https://ara.numerique.gouv.fr/rapport/MOhXP3haeuZHDmVxZiI-f/resultats
 
+**Lien du rapport d'audit** : https://ara.numerique.gouv.fr/rapport/MOhXP3haeuZHDmVxZiI-f/resultats
+
+**Spécifications d'accessbilités :**
 * Utilisation de balises sémantiques HTML5.
+* Validation W3C (Html et CSS).
 * Clarté, prévisibilité, cohérence sur le parcours utilisateur et minimalisme de l'interface, des boutons et de la navigation (pour limiter la charge cognitive et sensorielle) 
 * Contenus textuels clairs et explicites et aérés
 * Navigation au clavier (focus, navigation tab index, etc)
@@ -38,9 +43,14 @@ ien de rapport d'audit : https://ara.numerique.gouv.fr/rapport/MOhXP3haeuZHDmVxZ
 * Menu de personnalisation de l'affichage : Pour augmenter l'interligne, la taille du texte et passer en mode sombre, en gardant un  affichage cohérent
 * Peu d'animations visuelles (facilité l'accessibilité aux lecteurs d'écran et limite la charge congnitive/sensorielle)
 * Icones sur liens/boutons, comme alternatives "cognitive" aux textes des liens/boutons
+* 
+*** Test d'échantillons du site, avec lecteur d'écran** "Orca linux" et Talkback (smartphone android) sur navigateurs Firefox et Chrome
+  
+*** Outils utilisés pour vérifier les spécifications d'accessibilité :**
+* Extensions Wave, Web Developper, WCAG Contrast Checker, HeadingsMap.
 
 
-## Fonctionnalités actuelles (v1 /mai 2026)
+## Fonctionnalités actuelles (juin 2026)
 * Routeur centralisé gérant les URL (`?page=...`).
 * Séparation de la logique (Contrôleurs), de l'accès/gestion des données (modèle) et de l'affichage (Vues).
 * Page d'acceuil, menu d'accessibilité et menu de navigation; Page de contact, Page de ressources, Page de liens, responsives
@@ -57,3 +67,24 @@ ien de rapport d'audit : https://ara.numerique.gouv.fr/rapport/MOhXP3haeuZHDmVxZ
   - Outil personnalisé, accessible après inscription / connexion, par formulaire sécurisé
   - Dahsboard de l'outil de suivi : informations guidées pour l'utilisateur, formulaire pour renseigner des activités et leur coût en énergie lors de la      session d'utilisation de l'outil, affichage de son niveau d'énergie en direct, enregistrement et affichage des acitivtés renseignées lors de la          session, affichage de l'apercu des journaux de suivis (un journal contient les données/acitivités renseignées lors d'une session de suivi journalière complétée)
   - Vue des journaux de suivi, avec leurs listes d'activités associées (accessbile par un lien, au niveau de l'apercu des journaux, dans le dashboard global de l'outil de suivi)
+
+
+
+**Quelques captures d'écran du site : **
+
+1) Menu d'accessbilité et page d'acceuil :
+<img width="1911" height="1004" alt="image" src="https://github.com/user-attachments/assets/9213fa0e-fbcf-424c-b335-7827a2ad5065" />
+
+2) Dahsboard de l'outil de suivi de l'énergie :
+<img width="1911" height="826" alt="image" src="https://github.com/user-attachments/assets/19c5137a-0a7d-4c2d-8893-7b552a5c54aa" />
+<img width="1911" height="986" alt="image" src="https://github.com/user-attachments/assets/b63ee24e-2e38-4364-a317-2d72c0beed26" />
+
+3) Interface Admin :
+<img width="1911" height="986" alt="image" src="https://github.com/user-attachments/assets/4aed5f72-c102-41e8-a5dc-d779227af5e1" />
+<img width="772" height="962" alt="image" src="https://github.com/user-attachments/assets/d8d743ea-8a84-4a72-a8f7-faa8929251d9" />
+
+
+
+
+   
+
