@@ -26,8 +26,8 @@ include 'views/templates/header.php';
                 <h2><?= htmlspecialchars($lien['titre_lien']) ?></h2>
                 <p><?= htmlspecialchars($lien['description_courte']) ?></p><br>
 
-                <a href="<?= htmlspecialchars($lien['url']) ?>" target="_blank" class="lien_action">
-                    Visiter le site &#8599
+                <a href="<?= htmlspecialchars($lien['url']) ?>" target="_blank" class="lien_action" id="btn-visiter-lien">
+                    Visiter le site : <strong><?= $lien["titre_lien"] ?></strong> &#8599
                 </a>
             </article>
         <?php endforeach; ?>

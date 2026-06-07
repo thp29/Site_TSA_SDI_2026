@@ -1,7 +1,7 @@
 <?php
 
 // Variables pour le header
-$titre_page = "Ressources - TSA SDI 95 info";
+$titre_page = "Articles - TSA SDI 95 info";
 $page_actuelle = "articles";
 include 'views/templates/header.php';
 ?>
@@ -70,8 +70,8 @@ include 'views/templates/header.php';
                         <br>
 
                         <!--injecter l'ID de l'article à la fin de l'URL -->
-                        <a href="index.php?page=article_detail&id=<?= $article["id_article"] ?>" class="lien_action">
-                            Lire en entier
+                        <a href="index.php?page=article_detail&id=<?= $article["id_article"] ?>" class="lien_action" id="btn-lire-article">
+                            Lire l'article : <strong><?= $article["titre"] ?> </strong>, en entier
                             <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icone-svg">
                                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>

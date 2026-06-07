@@ -174,10 +174,11 @@ button.bouton_action:focus-visible {
     outline-offset: 3px;
 }
 
-#btn_menu_accessibilite, #btn_menu_nav {
-    outline: 4px solid var(--focus_classique);
+#btn_menu_nav:focus-visible,#btn_menu_accessibilite:focus-visible{
+ outline: 4px solid var(--focus_action);
     outline-offset: 3px;
 }
+
 #scrollToTop {
     width: 3.5rem; 
     height: 3.5rem;
@@ -656,7 +657,14 @@ article p {
 }
 
 
+/****style logo hero page Accueil ****/
 
+.logo_accueil{
+width: 10rem;
+height :auto;
+margin-right: 1.4rem;
+}
+   
 /* --- Page Contact & Formulaires --- */
 
  .formulaire-container {
@@ -785,6 +793,12 @@ button.btn_large, a.btn_large {
     font-weight: bold;
 }
 
+.tri_articles a[aria-current="page"]:focus-visible
+{
+    outline-offset: 5px;
+    outline: 4px solid var(--focus_classique); /* Ajoute un contour pour bien marquer la sélection */
+}
+
 /*** container article / pour passer à la ligne si trois darticles sur la meme ligne sur PC ****/
 
 #container-article {
@@ -808,6 +822,9 @@ button.btn_large, a.btn_large {
   border-radius: 1rem;
   box-shadow: 0 0 3px var(--h2-color);
 }
+
+#btn-lire-article {
+    text-align: center;}
 
   /* MQ apercu article PC */
 @media screen and (min-width: 992px) {
@@ -847,6 +864,12 @@ button.btn_large, a.btn_large {
     min-height: 9rem;
     width: 100%;
     }
+
+    #btn-lire-article {
+    height: 7rem;
+    width: auto;
+    padding: 1rem;
+}
     
 }
 
@@ -877,6 +900,9 @@ button.btn_large, a.btn_large {
 
 .msg_no_article
 {text-align: center;}
+
+
+
 
 
 /*** page vue article entier ****/
@@ -913,6 +939,10 @@ button.btn_large, a.btn_large {
     margin-top: 2rem;
 }
 
+
+
+
+
 /**** PAGe de liens *****/
 
 /* Grille de liens (Mobile first : Flexbox par défaut) */
@@ -929,7 +959,9 @@ button.btn_large, a.btn_large {
 
 /* Cartes individuelles */
 .carte_lien {
-    
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Organise le contenu de haut en bas */
+    justify-content: space-between; /* Espace le contenu (optionnel si on utilise margin-top: auto sur le bouton) */
     background: var(--fond_sections);
     border: 1px solid var(--main-color);
     padding: 20px;
@@ -951,6 +983,11 @@ button.btn_large, a.btn_large {
     margin : 2rem auto;
 }
 
+#btn-visiter-lien{
+    margin-top: auto;
+    text-align: center;
+}
+
 /* Passage en Grid pour Desktop (Ecran > 768px) */
 @media (min-width: 768px) {
     .grille_liens {
@@ -964,11 +1001,21 @@ button.btn_large, a.btn_large {
     }
     
     .carte_lien {
-        display: inline-flex;
         max-width: 550px; /* On laisse la grille gérer la largeur */
     }
 
+    #btn-visiter-lien{
+    height: 5rem;
+    width: 100%;
+    padding: 1rem;
+    }
+
 }
+
+
+
+
+
 /***** Page de temoignages *****/
 
 
@@ -1009,6 +1056,18 @@ button.btn_large, a.btn_large {
     font-weight: bold;
 }
 
+ #form-temoignage{
+    margin-top: 2rem;
+ }
+
+#form-temoignage .message_erreur {
+    margin: 0 auto;
+}
+
+#texte-temoignage{
+    text-align: center;
+}
+
 /* Passage en Grid pour Desktop (Ecran > 768px) */
 @media (min-width: 768px) {
     .grille_temoignages{
@@ -1033,6 +1092,13 @@ button.btn_large, a.btn_large {
     {
         max-width: 800px;
     }
+
+    #form-temoignage{
+        width:70%;
+    }
+    #envoyer-temoignage{
+    width: 40%;
+}
         
 }
 

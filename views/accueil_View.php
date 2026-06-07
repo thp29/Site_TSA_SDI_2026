@@ -8,7 +8,7 @@ include 'views/templates/header.php';
 ?>
 
 <section class="hero_bienvenue">
-    <h1>L'association TSA SDI 95 INFO </h1>
+    <h1> <img class="logo_accueil" src="./assets/imgs/logo.png" alt="Logo de l'association TSA SDI 95 info">L'association TSA SDI 95 INFO </h1>
 
     <div class="presentation_asso">
         <p class="hero_p1"> <strong>L'association </strong> a pour<strong> objectif de partager des informations </strong> simples et éclairées
